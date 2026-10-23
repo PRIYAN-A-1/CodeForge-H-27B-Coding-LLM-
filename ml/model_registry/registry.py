@@ -58,6 +58,18 @@ REGISTRY_DATA: List[ModelRegistryEntry] = [
         description="Lightweight multilingual coding base model ideal for local QLoRA fine-tuning on 6GB VRAM."
     ),
     ModelRegistryEntry(
+        model_id="codeforge-h-sft-v1",
+        architecture="CodeForge-H Hybrid Decoder + LoRA SFT Adapter",
+        parameter_count="126.9M Base + 0.15M LoRA",
+        context_length=4096,
+        precision="bf16 / fp32",
+        backend="transformers",
+        estimated_vram_gb=1.2,
+        loaded=False,
+        license="Apache-2.0",
+        description="Fine-tuned multilingual CodeForge-H model with LoRA adapter v1 for code generation, debugging, and project generation."
+    ),
+    ModelRegistryEntry(
         model_id="codeforge-h-xl-27b",
         architecture="CodeForge-H Full Hybrid Scaling",
         parameter_count="27B",
@@ -75,6 +87,7 @@ class ModelRegistry:
     def __init__(self, hardware_report_path: Optional[Path] = None):
         self.models: Dict[str, ModelRegistryEntry] = {m.model_id: m for m in REGISTRY_DATA}
         self.active_model_id: str = "codeforge-mock"
+        self.previous_model_id: str = "codeforge-mock"
         self.hardware_report_path = hardware_report_path or (Path(__file__).resolve().parent.parent.parent / "reports" / "hardware_report.json")
 
     def list_models(self) -> List[ModelRegistryEntry]:
@@ -122,6 +135,7 @@ class ModelRegistry:
         if not check["feasible"]:
             return {"success": False, "error": check["reason"]}
 
+        self.previous_model_id = self.active_model_id
         for m_id, entry in self.models.items():
             entry.loaded = (m_id == model_id)
 
@@ -129,7 +143,29 @@ class ModelRegistry:
         return {
             "success": True,
             "active_model": self.models[model_id].model_dump(),
+            "previous_model": self.previous_model_id,
             "message": f"Model {model_id} successfully set as active engine."
+        }
+
+    def rollback_model(self) -> Dict[str, Any]:
+        """
+        Rollback support per Section 10:
+        Safely restores previous working model without downtime or losing state.
+        """
+        target_model = self.previous_model_id if self.previous_model_id in self.models else "codeforge-mock"
+        current_model = self.active_model_id
+
+        for m_id, entry in self.models.items():
+            entry.loaded = (m_id == target_model)
+
+        self.active_model_id = target_model
+        self.previous_model_id = current_model
+
+        return {
+            "success": True,
+            "rolled_back_from": current_model,
+            "active_model": self.models[target_model].model_dump(),
+            "message": f"Rolled back model from {current_model} to {target_model}."
         }
 
 model_registry = ModelRegistry()

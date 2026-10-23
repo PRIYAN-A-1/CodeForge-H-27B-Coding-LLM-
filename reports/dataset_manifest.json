@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-10-23T06:27:34Z",
+  "total_datasets": 4,
+  "total_samples": 150,
+  "total_size_bytes": 140112,
+  "total_size_mb": 0.13,
+  "storage_directory": "datasets/raw",
+  "datasets": [
+    {
+      "dataset_id": "priyan_coding_agent_datasetv2",
+      "dataset_name": "User Custom Coding Dataset v2",
+      "source_url": "https://github.com/PRIYAN-A-1/CODING-AGENT-CODING-DATASETV2",
+      "license": "Custom/User",
+      "status": "Inaccessible",
+      "http_error": "HTTP 404 Not Found",
+      "examples_acquired": 0,
+      "sha256": null,
+      "size_bytes": 0,
+      "local_file": null
+    },
+    {
+      "dataset_id": "magicoder_oss_instruct",
+      "dataset_name": "Magicoder OSS-Instruct (Curated Subset)",
+      "source_url": "https://huggingface.co/datasets/ise-uiuc/Magicoder-OSS-Instruct-75K",
+      "license": "MIT",
+      "status": "Acquired",
+      "http_error": null,
+      "examples_acquired": 80,
+      "sha256": "2b6ee9c40b67752d9458a012664c17962e85a0a7767956523f09cdf949054cdf",
+      "size_bytes": 84900,
+      "local_file": "datasets/raw/magicoder_oss_instruct.jsonl"
+    },
+    {
+      "dataset_id": "codefeedback_repair",
+      "dataset_name": "CodeFeedback Filtered (Debugging & Repair)",
+      "source_url": "https://huggingface.co/datasets/m-a-p/CodeFeedback-Filtered-Instruction",
+      "license": "Apache-2.0",
+      "status": "Acquired",
+      "http_error": null,
+      "examples_acquired": 60,
+      "sha256": "a79da8fd76f6969de715b8f7b781538d44bc98c27bb3e4504fde0cdbf946ff41",
+      "size_bytes": 37184,
+      "local_file": "datasets/raw/codefeedback_repair.jsonl"
+    },
+    {
+      "dataset_id": "synthetic_agent_verified",
+      "dataset_name": "Synthetic Agent Verified Multi-File Pairs",
+      "source_url": "local://codeforge-sandbox-generator",
+      "license": "Apache-2.0",
+      "status": "Acquired",
+      "http_error": null,
+      "examples_acquired": 10,
+      "sha256": "3ed860115cd679f2c4e0cd794dfc361882162c510193842a65934b77117a9bae",
+      "size_bytes": 18028,
+      "local_file": "datasets/raw/synthetic_agent_verified.jsonl"
+    }
+  ]
+}

@@ -103,6 +103,10 @@ def load_model(req: LoadModelRequest):
         raise HTTPException(status_code=400, detail=result.get("error"))
     return result
 
+@app.post("/api/models/rollback")
+def rollback_model():
+    return model_registry.rollback_model()
+
 # 4. Project Planning Endpoint
 @app.post("/api/projects/plan", response_model=ProjectPlan)
 def plan_project(req: ProjectRequirementInput):

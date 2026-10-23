@@ -127,7 +127,7 @@ class SandboxRunner:
             full_content = f"{code}\n\n# Tests\n{tests}\n"
             file_path.write_text(full_content, encoding="utf-8")
 
-            res = self.run(f"{sys.executable} test_run.py", cwd=Path(tmpdir), timeout_seconds=timeout)
+            res = self.run(f'"{sys.executable}" test_run.py', cwd=Path(tmpdir), timeout_seconds=timeout)
             passed = (res.exit_code == 0)
             return {
                 "passed": passed,

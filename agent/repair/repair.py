@@ -127,6 +127,19 @@ class RepairEngine:
             else:
                 current_errors = val_result.unresolved_errors
 
+        if current_errors:
+            try:
+                from agent.feedback.continuous_improvement import improvement_loop
+                improvement_loop.record_failure(
+                    task_id=request.project_id,
+                    user_prompt=f"Project {request.project_id} repair attempt",
+                    failed_code=history[-1].error_analyzed if history else "",
+                    raw_error="; ".join(current_errors),
+                    language="Python"
+                )
+            except Exception:
+                pass
+
         return RepairOutcome(
             project_id=request.project_id,
             success=False,
