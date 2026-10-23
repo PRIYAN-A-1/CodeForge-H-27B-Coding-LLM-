@@ -88,7 +88,8 @@ graph TD
     Outcome -->|Pass| Release[ZIP Packaging & Export]
 ```
 
-### Architectural Highlights:
+### Architectural Highlights
+
 - **CodeForge-H (126.94M Parameters):** 3 blocks, each containing 3 DeltaNet linear recurrent layers followed by 1 Multi-Head Attention layer. Utilizes SwiGLU activations, RMSNorm, Rotary Position Embeddings (RoPE), tied embeddings, and an MTP speculative decoding head.
 - **27B QLoRA SFT Adapter:** Parameter-efficient fine-tuning with rank 16, target modules (`q_proj`, `k_proj`, `v_proj`, `o_proj`, `gate_proj`, `up_proj`, `down_proj`), and strict assistant-only cross-entropy loss masking.
 
@@ -116,7 +117,7 @@ flowchart TD
     class P0,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11 passed;
 ```
 
-### Phase Breakdown & Execution Verification:
+### Phase Breakdown & Execution Verification
 
 | Phase | Identity | Verification Outcome | Key Deliverables |
 | :--- | :--- | :---: | :--- |
@@ -162,6 +163,7 @@ The pipeline manages a curated catalog of **26 open-source datasets**, enforcing
 
 > [!IMPORTANT]
 > To prevent benchmark leakage and artificial score inflation, the following evaluation benchmarks are **strictly quarantined** from the training stream via automated 13-gram decontamination filters:
+>
 > - **HumanEval (OpenAI):** 164 hand-crafted Python programming problems (`MIT` license - quarantined).
 > - **MBPP (Google Research):** 974 crowd-sourced Python programming problems (`CC-BY-4.0` - quarantined).
 
@@ -218,6 +220,7 @@ python scripts/run_autonomous_pipeline.py --steps 5 --budget-gb 20
 ## 7. Verified Telemetry & Test Suite
 
 ### 7.1 Host Hardware Profile
+
 - **CPU:** AMD Ryzen 5 7235HS (4 physical cores, 8 logical threads @ 3.2 GHz)
 - **RAM:** 23.69 GB physical RAM (~4.2 GB free at idle)
 - **GPU:** NVIDIA GeForce RTX 3050 Laptop GPU (6,144 MB VRAM, CUDA 13.1, Driver 591.74)
