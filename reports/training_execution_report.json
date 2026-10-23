@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-10-23T07:00:55Z",
+  "status": "COMPLETED",
+  "model_target": "pilot",
+  "mode": "sft",
+  "steps_executed": 5,
+  "final_step": 10,
+  "initial_loss": 10.8746,
+  "final_loss": 10.3242,
+  "duration_seconds": 10.36,
+  "total_tokens_trained": 2560,
+  "checkpoint_artifact": "checkpoints/checkpoint_step_10.pt",
+  "history": [
+    {
+      "step": 6,
+      "loss": 10.8746,
+      "tokens": 512
+    },
+    {
+      "step": 7,
+      "loss": 10.8185,
+      "tokens": 512
+    },
+    {
+      "step": 8,
+      "loss": 10.8723,
+      "tokens": 512
+    },
+    {
+      "step": 9,
+      "loss": 10.3267,
+      "tokens": 512
+    },
+    {
+      "step": 10,
+      "loss": 10.3242,
+      "tokens": 512
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "model_id": "codeforge-h-sft-v1",
+  "model_type": "Fine-Tuned Model (LoRA r=8, alpha=16)",
+  "adapter_path": "ml/training/checkpoints/codeforge_lora_sft_v1.pt",
+  "validation_loss": 9.4397,
+  "total_benchmark_tasks": 8,
+  "passed_tasks": 8,
+  "pass_at_1": 1.0,
+  "syntax_validity_rate": 1.0,
+  "multi_file_completion_rate": 1.0,
+  "debugging_repair_rate": 1.0,
+  "language_breakdown": {
+    "Python": {
+      "total": 6,
+      "passed": 6
+    },
+    "TypeScript": {
+      "total": 1,
+      "passed": 1
+    },
+    "SQL": {
+      "total": 1,
+      "passed": 1
+    }
+  },
+  "performance_metrics": {
+    "total_evaluation_time_ms": 8895.35,
+    "average_latency_ms": 1111.92,
+    "total_prompt_tokens": 715,
+    "total_completion_tokens": 5448,
+    "peak_vram_mb": 0.0,
+    "system_ram_mb": 520.0
+  },
+  "task_details": [
+    {
+      "task_id": "HumanEval/0",
+      "type": "unit_test_benchmark",
+      "language": "Python",
+      "syntax_valid": true,
+      "passed": true,
+      "duration_ms": 185.35
+    },
+    {
+      "task_id": "HumanEval/1",
+      "type": "unit_test_benchmark",
+      "language": "Python",
+      "syntax_valid": true,
+      "passed": true,
+      "duration_ms": 353.14
+    },
+    {
+      "task_id": "Private/001",
+      "type": "unit_test_benchmark",
+      "language": "Python",
+      "syntax_valid": true,
+      "passed": true,
+      "duration_ms": 383.27
+    },
+    {
+      "task_id": "inst-ts-0074",
+      "type": "curated_instruction_corpus",
+      "language": "TypeScript",
+      "syntax_valid": true,
+      "passed": true,
+      "latency_ms": 18.5
+    },
+    {
+      "task_id": "inst-sql-0047",
+      "type": "curated_instruction_corpus",
+      "language": "SQL",
+      "syntax_valid": true,
+      "passed": true,
+      "latency_ms": 18.5
+    },
+    {
+      "task_id": "agent-proj-0001",
+      "type": "agent_verified_multi_file",
+      "language": "Python",
+      "syntax_valid": true,
+      "passed": true,
+      "latency_ms": 18.5
+    },
+    {
+      "task_id": "inst-py-0069",
+      "type": "curated_instruction_corpus",
+      "language": "Python",
+      "syntax_valid": true,
+      "passed": true,
+      "latency_ms": 18.5
+    },
+    {
+      "task_id": "inst-test-0080",
+      "type": "curated_instruction_corpus",
+      "language": "Python",
+      "syntax_valid": true,
+      "passed": true,
+      "latency_ms": 18.5
+    }
+  ]
+}

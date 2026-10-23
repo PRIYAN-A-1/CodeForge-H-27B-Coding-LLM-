@@ -28,5 +28,15 @@
     "user_prompt": "Build a user authentication microservice",
     "clean_error": "SyntaxError: invalid syntax in C:\\Users\\<REDACTED>\\main.py",
     "failed_code_snippet": "def broken(:\n    pass\n"
+  },
+  {
+    "fingerprint": "96f61a230604e4d5",
+    "task_id": "test_proj_regression",
+    "timestamp": "2026-10-23T07:05:00Z",
+    "category": "model_syntax_error",
+    "language": "Python",
+    "user_prompt": "Build a user authentication microservice",
+    "clean_error": "SyntaxError: invalid syntax in C:\\Users\\<REDACTED>\\main.py",
+    "failed_code_snippet": "def broken(:\n    pass\n"
   }
 ]

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-10-23T06:56:45Z",
+  "total_trajectories": 4,
+  "total_agent_steps": 11,
+  "tool_types_validated": [
+    "read_file",
+    "run_command",
+    "replace_file_content"
+  ],
+  "train_file": "datasets/agent_trajectories/agent_trajectories_train.jsonl",
+  "val_file": "datasets/agent_trajectories/agent_trajectories_val.jsonl",
+  "outcomes": {
+    "VERIFIED_SUCCESS": 4,
+    "FAILED": 0
+  }
+}

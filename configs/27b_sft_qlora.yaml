@@ -1,0 +1,46 @@
+# CodeForge AI - 27B Parameter-Efficient SFT / QLoRA Configuration
+model:
+  base_model: "qwen2.5-coder-27b / codeforge-h-xl-27b"
+  parameter_count: "27B"
+  quantization: "int4_nf4"
+  double_quantization: true
+  compute_dtype: "bfloat16"
+
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+training:
+  epochs: 3
+  learning_rate: 2.0e-4
+  lr_scheduler_type: "cosine"
+  warmup_ratio: 0.03
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  assistant_only_loss_masking: true
+
+hardware_and_batch:
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 16
+  gradient_checkpointing: true
+  optim: "paged_adamw_8bit"
+  logging_steps: 10
+  save_steps: 100
+  eval_steps: 50
+  save_total_limit: 3
+
+data:
+  train_file: "datasets/processed/sft_chatml_train.jsonl"
+  validation_file: "datasets/processed/sft_chatml_val.jsonl"
+  max_seq_length: 4096

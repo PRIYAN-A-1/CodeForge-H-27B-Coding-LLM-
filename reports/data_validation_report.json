@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-10-23T06:54:30Z",
+  "total_files_scanned": 3,
+  "total_records_processed": 150,
+  "records_valid": 150,
+  "records_rejected_empty": 0,
+  "records_with_secrets_redacted": 0,
+  "language_distribution": {
+    "Python": 110,
+    "TypeScript": 20,
+    "SQL": 20
+  },
+  "file_summaries": [
+    {
+      "filename": "magicoder_oss_instruct.jsonl",
+      "valid_samples": 80,
+      "empty_or_corrupt": 0,
+      "secrets_scrubbed": 0,
+      "languages": {
+        "Python": 40,
+        "TypeScript": 20,
+        "SQL": 20
+      }
+    },
+    {
+      "filename": "codefeedback_repair.jsonl",
+      "valid_samples": 60,
+      "empty_or_corrupt": 0,
+      "secrets_scrubbed": 0,
+      "languages": {
+        "Python": 60
+      }
+    },
+    {
+      "filename": "synthetic_agent_verified.jsonl",
+      "valid_samples": 10,
+      "empty_or_corrupt": 0,
+      "secrets_scrubbed": 0,
+      "languages": {
+        "Python": 10
+      }
+    }
+  ]
+}

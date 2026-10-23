@@ -24,8 +24,8 @@
     }
   },
   "performance_metrics": {
-    "total_evaluation_time_ms": 8375.89,
-    "average_latency_ms": 1046.99,
+    "total_evaluation_time_ms": 8895.35,
+    "average_latency_ms": 1111.92,
     "total_prompt_tokens": 715,
     "total_completion_tokens": 5448,
     "peak_vram_mb": 0.0,
@@ -38,7 +38,7 @@
       "language": "Python",
       "syntax_valid": true,
       "passed": true,
-      "duration_ms": 254.5
+      "duration_ms": 185.35
     },
     {
       "task_id": "HumanEval/1",
@@ -46,7 +46,7 @@
       "language": "Python",
       "syntax_valid": true,
       "passed": true,
-      "duration_ms": 227.75
+      "duration_ms": 353.14
     },
     {
       "task_id": "Private/001",
@@ -54,7 +54,7 @@
       "language": "Python",
       "syntax_valid": true,
       "passed": true,
-      "duration_ms": 232.12
+      "duration_ms": 383.27
     },
     {
       "task_id": "inst-ts-0074",

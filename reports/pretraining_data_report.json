@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-10-23T06:55:36Z",
+  "output_file": "datasets/processed/pretraining_fim.jsonl",
+  "total_records": 85,
+  "fim_transformed_records": 46,
+  "fim_rate_pct": 54.12,
+  "total_tokens": 66770,
+  "average_tokens_per_record": 785.53,
+  "sentinel_tokens": {
+    "prefix": "<fim_prefix>",
+    "suffix": "<fim_suffix>",
+    "middle": "<fim_middle>"
+  }
+}

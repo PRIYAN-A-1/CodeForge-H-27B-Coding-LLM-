@@ -1,0 +1,201 @@
+{
+  "audit_timestamp": "2026-10-23T06:52:51Z",
+  "total_candidates_audited": 18,
+  "approved_pretraining_sources": [
+    {
+      "dataset_name": "The Stack v2",
+      "license": "Permissive (Filtered per-file: MIT, Apache-2.0, BSD)",
+      "publisher": "BigCode Project / ServiceNow / Hugging Face",
+      "canonical_url": "https://huggingface.co/datasets/bigcode/the-stack-v2",
+      "commercial_usable": true,
+      "attribution_required": true,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "The Stack v1",
+      "license": "Multiple Permissive (MIT, Apache-2.0, BSD-2/3-Clause)",
+      "publisher": "BigCode Project",
+      "canonical_url": "https://huggingface.co/datasets/bigcode/the-stack",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "StarCoderData",
+      "license": "BigCode OpenRAIL-M v1 / Permissive per-source",
+      "publisher": "BigCode Project",
+      "canonical_url": "https://huggingface.co/datasets/bigcode/starcoderdata",
+      "commercial_usable": false,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": "Subject to BigCode OpenRAIL-M v1 acceptable use policy (no cyberattack generation or unlawful discrimination)."
+    },
+    {
+      "dataset_name": "CodeSearchNet",
+      "license": "Multiple Permissive (MIT, Apache-2.0, BSD)",
+      "publisher": "GitHub / Microsoft Research",
+      "canonical_url": "https://github.com/github/CodeSearchNet",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "CodeParrot GitHub Code",
+      "license": "Multiple Permissive (MIT, Apache-2.0, BSD-2/3-Clause)",
+      "publisher": "Hugging Face / CodeParrot",
+      "canonical_url": "https://huggingface.co/datasets/codeparrot/github-code",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    }
+  ],
+  "approved_sft_sources": [
+    {
+      "dataset_name": "OpenCodeInstruct",
+      "license": "CC-BY-4.0",
+      "publisher": "NVIDIA",
+      "canonical_url": "https://huggingface.co/datasets/nvidia/OpenCodeInstruct",
+      "commercial_usable": true,
+      "attribution_required": true,
+      "training_status": "APPROVED",
+      "notes": "Attribution required: Cite NVIDIA OpenCodeInstruct release and retain CC-BY-4.0 license notice."
+    },
+    {
+      "dataset_name": "Magicoder OSS-Instruct 75K",
+      "license": "Apache-2.0",
+      "publisher": "University of Illinois Urbana-Champaign (UIUC)",
+      "canonical_url": "https://huggingface.co/datasets/ise-uiuc/Magicoder-OSS-Instruct-75K",
+      "commercial_usable": false,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "Magicoder Evol-Instruct 110K",
+      "license": "Apache-2.0",
+      "publisher": "UIUC",
+      "canonical_url": "https://huggingface.co/datasets/ise-uiuc/Magicoder-Evol-Instruct-110K",
+      "commercial_usable": false,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "CodeAlpaca 20K",
+      "license": "Apache-2.0",
+      "publisher": "Hugging Face / Sahil Chaudhary",
+      "canonical_url": "https://huggingface.co/datasets/HuggingFaceH4/CodeAlpaca_20K",
+      "commercial_usable": false,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "CodeFeedback Filtered Instruction",
+      "license": "Apache-2.0",
+      "publisher": "M-A-P (Multimodal Art Projection)",
+      "canonical_url": "https://huggingface.co/datasets/m-a-p/CodeFeedback-Filtered-Instruction",
+      "commercial_usable": false,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "Glaive Code Assistant v3",
+      "license": "Apache-2.0",
+      "publisher": "Glaive AI",
+      "canonical_url": "https://huggingface.co/datasets/glaiveai/glaive-code-assistant-v3",
+      "commercial_usable": false,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "APPS (Automated Programming Progress Standard)",
+      "license": "MIT",
+      "publisher": "Dan Hendrycks et al. / UC Berkeley",
+      "canonical_url": "https://github.com/hendrycks/apps",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "CodeXGLUE",
+      "license": "MIT",
+      "publisher": "Microsoft Research",
+      "canonical_url": "https://github.com/microsoft/CodeXGLUE",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    }
+  ],
+  "approved_agent_sources": [
+    {
+      "dataset_name": "SWE-bench",
+      "license": "MIT",
+      "publisher": "Princeton NLP / Carlos E. Jimenez et al.",
+      "canonical_url": "https://github.com/swe-bench/SWE-bench",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "SWE-smith",
+      "license": "MIT",
+      "publisher": "SWE-bench Team",
+      "canonical_url": "https://github.com/SWE-bench/SWE-smith",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "OpenHands Agent Trajectories",
+      "license": "MIT",
+      "publisher": "All-Hands-AI (formerly OpenDevin)",
+      "canonical_url": "https://github.com/All-Hands-AI/OpenHands",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    }
+  ],
+  "evaluation_quarantined_benchmarks": [
+    {
+      "dataset_name": "HumanEval",
+      "license": "MIT",
+      "publisher": "OpenAI",
+      "canonical_url": "https://github.com/openai/human-eval",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "QUARANTINED_FOR_EVALUATION",
+      "notes": "Held-out benchmark; strictly prohibited from training data to avoid test contamination."
+    },
+    {
+      "dataset_name": "MBPP (Mostly Basic Python Problems)",
+      "license": "CC-BY-4.0",
+      "publisher": "Google Research",
+      "canonical_url": "https://github.com/google-research/google-research/tree/master/mbpp",
+      "commercial_usable": true,
+      "attribution_required": true,
+      "training_status": "QUARANTINED_FOR_EVALUATION",
+      "notes": "Held-out benchmark; strictly prohibited from training data to avoid test contamination."
+    }
+  ],
+  "mandatory_legal_notices": [
+    "StarCoderData: Adherence to OpenRAIL-M behavioral restrictions required.",
+    "OpenCodeInstruct: Attribution to NVIDIA is legally mandatory under CC-BY-4.0."
+  ],
+  "summary_counts": {
+    "approved_for_training": 16,
+    "quarantined_for_evaluation": 2,
+    "total": 18
+  }
+}

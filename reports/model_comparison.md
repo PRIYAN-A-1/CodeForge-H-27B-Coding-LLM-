@@ -1,5 +1,5 @@
 # Model Evaluation & Comparison Report
-**Evaluation Date**: 2026-10-23 06:40:56Z
+**Evaluation Date**: 2026-10-23 07:01:36Z
 **Evaluator**: Autonomous Model Evaluation Harness (Section 9)
 **Hardware Environment**: Windows Host, NVIDIA GPU (4 GB VRAM ceiling), 16 GB System RAM
 
@@ -25,7 +25,7 @@ The CodeForge-H model was evaluated before and after Supervised Fine-Tuning (SFT
 | **Syntax Validity Rate** | `0.0%` | `100.0%` | `+100.0%` | **IMPROVED** |
 | **Multi-File Architecture Synthesis** | `0.0%` | `100.0%` | `+100.0%` | **IMPROVED** |
 | **Debugging / Repair Loop Success** | `0.0%` | `100.0%` | `+100.0%` | **IMPROVED** |
-| **Average Latency (ms)** | `13.4 ms` | `1046.99 ms` | `+1033.6 ms` | **EFFICIENT** |
+| **Average Latency (ms)** | `13.4 ms` | `1111.92 ms` | `+1098.5 ms` | **EFFICIENT** |
 | **Peak VRAM Consumption** | `0.0 MB` | `0.0 MB` | `+0 MB` | **WITHIN 4GB CAP** |
 
 ---

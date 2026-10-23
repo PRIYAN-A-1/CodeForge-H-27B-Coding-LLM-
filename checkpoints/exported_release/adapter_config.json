@@ -1,0 +1,19 @@
+{
+  "adapter_name": "codeforge-lora-sft-v1",
+  "base_model_target": "codeforge-h-xl-27b",
+  "peft_type": "LORA",
+  "r": 8,
+  "lora_alpha": 16.0,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "v_proj"
+  ],
+  "modules_to_save": null,
+  "task_type": "CAUSAL_LM",
+  "vocab_size": 49152,
+  "initial_validation_loss": 10.8147,
+  "final_validation_loss": 9.4397,
+  "sha256": "46ab534d0cd1c467c2e526cb9f5508273224da9490af52870b04d0b5f3215c0e",
+  "exported_at": "2026-10-23T07:02:53Z"
+}

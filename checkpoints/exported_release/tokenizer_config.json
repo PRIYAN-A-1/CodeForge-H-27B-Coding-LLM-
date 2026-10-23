@@ -1,0 +1,11 @@
+{
+  "tokenizer_type": "Byte-Level BPE",
+  "vocab_size": 49152,
+  "special_tokens": {
+    "bos_token": "<|im_start|>",
+    "eos_token": "<|im_end|>",
+    "fim_prefix": "<fim_prefix>",
+    "fim_suffix": "<fim_suffix>",
+    "fim_middle": "<fim_middle>"
+  }
+}
