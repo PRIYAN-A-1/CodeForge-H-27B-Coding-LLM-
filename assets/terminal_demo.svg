@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" height="auto" style="background: transparent;">
+  <defs>
+    <linearGradient id="termBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="termBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.6" />
+    </linearGradient>
+    <filter id="neonBlur">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes termBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    .term-cursor { animation: termBlink 0.9s infinite; }
+    .mono { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Menlo, Consolas, monospace; font-size: 13px; }
+  </style>
+
+  <!-- Terminal Frame -->
+  <rect x="4" y="4" width="892" height="472" rx="14" fill="url(#termBg)" stroke="url(#termBorder)" stroke-width="1.5" />
+  
+  <!-- Terminal Header Bar -->
+  <rect x="5" y="5" width="890" height="38" rx="13" fill="#131b2e" />
+  <circle cx="28" cy="24" r="6" fill="#f87171" />
+  <circle cx="48" cy="24" r="6" fill="#fbbf24" />
+  <circle cx="68" cy="24" r="6" fill="#34d399" />
+  
+  <text x="450" y="27" font-family="-apple-system, sans-serif" font-size="12" fill="#64748b" font-weight="600" text-anchor="middle">
+    codeforge-ai — autonomous-loop — 127.0.0.1:8000
+  </text>
+
+  <!-- Terminal Content -->
+  <g transform="translate(30, 72)" class="mono">
+    <!-- Command Line -->
+    <text x="0" y="0">
+      <tspan fill="#34d399" font-weight="700">priyan@codeforge-h</tspan><tspan fill="#64748b">:</tspan><tspan fill="#38bdf8">~/projects</tspan><tspan fill="#94a3b8">$ </tspan><tspan fill="#f1f5f9">python -m cli.codeforge gen </tspan><tspan fill="#fbbf24">"Build an enterprise expense tracker API"</tspan>
+    </text>
+
+    <!-- Phase 1: Planning -->
+    <text x="0" y="32">
+      <tspan fill="#38bdf8" font-weight="700">[1/5 PLANNER]</tspan>
+      <tspan fill="#94a3b8"> Validating requirement schema... </tspan>
+      <tspan fill="#34d399">OK</tspan>
+      <tspan fill="#64748b"> (Architecture: Next.js 15 App Router + FastAPI + SQLite)</tspan>
+    </text>
+
+    <!-- Phase 2: Synthesis -->
+    <text x="0" y="62">
+      <tspan fill="#818cf8" font-weight="700">[2/5 SYNTHESIS]</tspan>
+      <tspan fill="#94a3b8"> Synthesizing 9 multi-file project artifacts with AST security jail...</tspan>
+    </text>
+    <text x="24" y="86" fill="#64748b">├── backend/main.py, backend/models.py, backend/auth.py, backend/test_api.py</text>
+    <text x="24" y="106" fill="#64748b">└── frontend/package.json, src/app/page.tsx, Dockerfile, docker-compose.yml</text>
+
+    <!-- Phase 3: Sandboxed Execution -->
+    <text x="0" y="140">
+      <tspan fill="#f59e0b" font-weight="700">[3/5 SANDBOX]</tspan>
+      <tspan fill="#94a3b8"> Spawning isolated test runner (timeout=30s, jail=workspace/proj-453988)...</tspan>
+    </text>
+    <text x="24" y="164">
+      <tspan fill="#94a3b8">Running </tspan><tspan fill="#f1f5f9">pytest backend/test_api.py -v</tspan>
+      <tspan fill="#64748b"> ... </tspan>
+      <tspan fill="#f87171">FAILED</tspan>
+      <tspan fill="#64748b"> (AssertionError: 401 != 500 in test_auth_unauthorized)</tspan>
+    </text>
+
+    <!-- Phase 4: Self-Repair -->
+    <text x="0" y="202">
+      <tspan fill="#ec4899" font-weight="700">[4/5 REPAIR]</tspan>
+      <tspan fill="#94a3b8"> Bounded Self-Repair triggered </tspan>
+      <tspan fill="#a855f7">(Attempt 1/3)</tspan>
+    </text>
+    <text x="24" y="226" fill="#38bdf8">→ Analyzed traceback: Missing HTTPException(status_code=401) in backend/auth.py</text>
+    <text x="24" y="246" fill="#34d399">→ Applied minimal unified AST patch to backend/auth.py (diff: +4 lines, -1 line)</text>
+    <text x="24" y="266">
+      <tspan fill="#94a3b8">→ Retesting sandbox: </tspan>
+      <tspan fill="#34d399" font-weight="700">4 PASSED</tspan>
+      <tspan fill="#64748b"> in 0.42s (100% test contract verified)</tspan>
+    </text>
+
+    <!-- Phase 5: Export -->
+    <text x="0" y="304">
+      <tspan fill="#34d399" font-weight="700">[5/5 EXPORT]</tspan>
+      <tspan fill="#94a3b8"> Packaging verified project bundle...</tspan>
+    </text>
+    <text x="24" y="328" fill="#38bdf8">✔ Exported ZIP: exports/expense-tracker-v1.0.0.zip (SHA-256: 7d4a9f...)</text>
+    <text x="24" y="348" fill="#64748b">✔ Continuous improvement feedback loop updated: staged_corrections.jsonl</text>
+
+    <!-- Final Prompt with Blinking Cursor -->
+    <text x="0" y="388">
+      <tspan fill="#34d399" font-weight="700">priyan@codeforge-h</tspan><tspan fill="#64748b">:</tspan><tspan fill="#38bdf8">~/projects</tspan><tspan fill="#94a3b8">$ </tspan><tspan fill="#38bdf8">curl -X GET http://127.0.0.1:8000/api/v1/projects/status</tspan>
+      <tspan class="term-cursor" fill="#38bdf8">█</tspan>
+    </text>
+  </g>
+</svg>
