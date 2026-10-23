@@ -1,0 +1,82 @@
+{
+  "name": "codeforge-ai",
+  "displayName": "CodeForge AI - Autonomous Multilingual Coding Assistant",
+  "description": "Autonomous full-stack project generation, sandbox validation, and self-repair powered by CodeForge-H.",
+  "version": "1.0.0",
+  "publisher": "codeforge",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Machine Learning",
+    "Testing"
+  ],
+  "keywords": [
+    "ai",
+    "coding agent",
+    "fastapi",
+    "nextjs",
+    "codeforge",
+    "llm",
+    "self-repair"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onCommand:codeforge.generateProject",
+    "onCommand:codeforge.validateProject",
+    "onCommand:codeforge.repairProject",
+    "onCommand:codeforge.openDashboard"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeforge.generateProject",
+        "title": "CodeForge: Generate Full-Stack Project from Requirement",
+        "category": "CodeForge"
+      },
+      {
+        "command": "codeforge.validateProject",
+        "title": "CodeForge: Validate Current Project (Sandbox)",
+        "category": "CodeForge"
+      },
+      {
+        "command": "codeforge.repairProject",
+        "title": "CodeForge: Self-Repair Failing Project Tests",
+        "category": "CodeForge"
+      },
+      {
+        "command": "codeforge.openDashboard",
+        "title": "CodeForge: Open Web Dashboard",
+        "category": "CodeForge"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "codeforge.generateProject"
+        },
+        {
+          "command": "codeforge.validateProject"
+        },
+        {
+          "command": "codeforge.repairProject"
+        },
+        {
+          "command": "codeforge.openDashboard"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "CodeForge AI",
+      "properties": {
+        "codeforge.apiUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:8000",
+          "description": "CodeForge AI REST API base URL"
+        }
+      }
+    }
+  }
+}

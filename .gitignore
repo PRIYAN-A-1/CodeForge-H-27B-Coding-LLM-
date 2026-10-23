@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environments & dependencies
+.env
+venv/
+env/
+node_modules/
+.next/
+out/
+dist/
+build/
+
+# Model checkpoints & large raw datasets (keep out of git per Section 7)
+*.safetensors
+*.pt
+*.bin
+*.onnx
+*.gguf
+ml/training/checkpoints/
+datasets/raw/*
+!datasets/raw/.gitkeep
+datasets/processed/*
+!datasets/processed/.gitkeep
+sandbox/projects/*
+!sandbox/projects/.gitkeep
+
+# SQLite database & archives
+*.db
+*.sqlite3
+*.zip
+
+# Logs & OS artifacts
+*.log
+.DS_Store
+Thumbs.db

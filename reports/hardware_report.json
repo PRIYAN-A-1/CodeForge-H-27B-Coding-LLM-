@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-10-23T10:36:00+05:30",
+  "os": {
+    "name": "Microsoft Windows 11 Home Single Language",
+    "version": "10.0.26300",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "cpu": {
+    "model": "AMD Ryzen 5 7235HS",
+    "physical_cores": 4,
+    "logical_cores": 8,
+    "architecture": "x86_64"
+  },
+  "memory": {
+    "total_bytes": 25439199232,
+    "total_gb": 23.69,
+    "available_bytes": 4498882560,
+    "available_gb": 4.19
+  },
+  "gpu": {
+    "detected": true,
+    "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "vram_total_bytes": 6442450944,
+    "vram_total_mb": 6144,
+    "vram_available_mb": 4872,
+    "driver_version": "591.74",
+    "cuda_version_supported": "13.1",
+    "torch_cuda_available": false,
+    "torch_version": "2.14.0+cpu",
+    "notes": "PyTorch installed in default Python environment is CPU build (2.14.0+cpu). NVIDIA hardware driver and CUDA runtime 13.1 are present on system."
+  },
+  "storage": {
+    "drives": [
+      {
+        "drive": "C:",
+        "total_gb": 474.71,
+        "free_gb": 66.69,
+        "type": "NVMe SSD (System)"
+      },
+      {
+        "drive": "G:",
+        "total_gb": 474.71,
+        "free_gb": 63.35,
+        "type": "Google Drive Virtual Volume (Workspace Root)"
+      }
+    ]
+  },
+  "runtimes": {
+    "python": {
+      "version": "3.13.13",
+      "executable": "C:\\Users\\priya\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "pip_version": "26.2.1"
+    },
+    "node": {
+      "version": "v26.7.0"
+    },
+    "npm": {
+      "version": "11.19.0"
+    },
+    "git": {
+      "version": "2.55.0.windows.3"
+    },
+    "docker": {
+      "available": false,
+      "reason": "Docker CLI not found on system PATH. Isolated execution sandbox will fallback to process-bounded workspace jail."
+    },
+    "ollama": {
+      "available": true,
+      "executable": "C:\\Users\\priya\\AppData\\Local\\Programs\\Ollama\\ollama.exe",
+      "endpoint": "http://127.0.0.1:11434",
+      "models_detected": [
+        "qwen3.8:27b (17 GB)",
+        "minimax-m3:cloud"
+      ]
+    }
+  }
+}

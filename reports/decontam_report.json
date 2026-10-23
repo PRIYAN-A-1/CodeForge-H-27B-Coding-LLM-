@@ -1,0 +1,7 @@
+{
+  "total_documents_scanned": 3,
+  "contaminated_count": 0,
+  "clean_count": 3,
+  "decontamination_pass_rate": 1.0,
+  "contaminated_samples": []
+}

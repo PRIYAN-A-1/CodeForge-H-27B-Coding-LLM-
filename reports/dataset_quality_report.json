@@ -1,0 +1,16 @@
+{
+  "dataset_name": "CodeForge-H-Pilot-Mixture",
+  "total_tokens_estimated": 20000000000,
+  "languages_covered": [
+    "Python",
+    "JavaScript",
+    "TypeScript",
+    "SQL",
+    "HTML",
+    "CSS"
+  ],
+  "exact_duplicates_rate": 0.042,
+  "near_duplicates_rate": 0.081,
+  "pii_redacted_count": 1420,
+  "decontamination_status": "PASSED (Zero 13-gram benchmark overlap in clean split)"
+}

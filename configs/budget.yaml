@@ -1,0 +1,53 @@
+# Budget & Compute Ladder Configuration
+version: 1.0.0
+max_usd: 300.0  # Hard budget ceiling for pilot development and smoke tests
+cost_per_gpu_hour_usd: 2.50  # Typical H100 hourly spot/on-demand rate
+mfu_assumed: 0.40  # 40% Model Flops Utilization (MFU) on modern tensor cores
+h100_peak_tflops: 989.0  # FP16/BF16 Tensor Core peak without sparsity
+
+tiers:
+  pilot:
+    name: "PILOT"
+    params: 140000000        # ~140M params
+    tokens: 20000000000      # 20B tokens
+    seq_len: 2048
+    estimated_h100_hours: 45
+    budget_cap_usd: 300.0
+    allowed_local: true
+
+  s1:
+    name: "S1"
+    params: 350000000        # ~350M params
+    tokens: 50000000000      # 50B tokens
+    seq_len: 2048
+    estimated_h100_hours: 230
+    budget_cap_usd: 700.0
+    allowed_local: false
+
+  m1:
+    name: "M1"
+    params: 1000000000       # ~1B params
+    tokens: 200000000000     # 200B tokens
+    seq_len: 4096
+    estimated_h100_hours: 830
+    budget_cap_usd: 2500.0
+    allowed_local: false
+
+  l1:
+    name: "L1"
+    params: 4000000000       # ~4B params
+    tokens: 1000000000000    # 1T tokens
+    seq_len: 8192
+    estimated_h100_hours: 17000
+    budget_cap_usd: 45000.0
+    allowed_local: false
+
+  xl:
+    name: "XL"
+    params: 27000000000      # 27B params
+    tokens: 3000000000000    # 3T tokens
+    seq_len: 32768
+    estimated_h100_hours: 320000
+    budget_cap_usd: 850000.0
+    allowed_local: false
+    requires_explicit_funded_approval: true

@@ -1,0 +1,10 @@
+# Risk Management Register (RISKS.md)
+
+| Risk ID | Category | Risk Description | Severity | Likelihood | Mitigation Strategy | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **RSK-001** | Compute | Attempting to train or unquantized load a 27B model on a local laptop machine causes OOM and system lockup. | High | High | Strict preflight resource checker (`scripts/estimate_cost.py` & hardware checks) blocks any pretrain/fine-tune configuration exceeding local resources. | **Active & Enforced** |
+| **RSK-002** | Security | Generated code executes arbitrary destructive system commands (`rm -rf`, format disk, unauthorized socket access). | Critical | Medium | Sandbox runner validates all commands against allowlists, confines execution to temp workspace, applies 10s timeout, and drops privileges. | **Active & Enforced** |
+| **RSK-003** | Data | Benchmark contamination in training data inflates evaluation scores on HumanEval, MBPP, or EvalPlus. | High | Medium | 13-gram exact and near-match decontamination scanner runs across raw datasets; matches are dropped and logged to `reports/decontam_report.json`. | **Active & Enforced** |
+| **RSK-004** | Compliance | Ingesting copyrighted code without attribution or proprietary code under restrictive licenses (GPL/Proprietary). | High | Low | License filter enforces permissive-only allowlist (MIT, Apache-2.0, BSD-2/3, ISC). Full metadata tracking in `DATA_CARD.md`. | **Active & Enforced** |
+| **RSK-005** | Safety | Malicious prompts generating exploits, credential stealers, or backdoors. | High | Medium | Dual safety evaluation harness measuring refusal rate on malicious prompts and over-refusal on defensive educational queries. | **Active & Enforced** |
+| **RSK-006** | Financial | GPU jobs accidentally running unbounded in cloud environments causing cost overruns. | High | Low | `budget.yaml` enforces hard cap (`max_usd: 300.0`). Every run aborts before launching if estimated compute exceeds budget. | **Active & Enforced** |
