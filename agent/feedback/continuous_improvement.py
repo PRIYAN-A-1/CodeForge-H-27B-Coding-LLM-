@@ -251,6 +251,7 @@ class ContinuousImprovementLoop:
 
         return {
             "triggered": True,
+            "staged_count": len(staged_samples),
             "promoted_samples": len(staged_samples),
             "archive_path": str(archive_name.relative_to(PROJECT_ROOT)).replace("\\", "/"),
             "new_training_dataset_size": sum(1 for _ in open(train_file, "r", encoding="utf-8")),

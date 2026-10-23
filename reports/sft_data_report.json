@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-23T06:56:03Z",
+  "timestamp": "2026-10-23T07:59:30Z",
   "chat_template": "ChatML (<|im_start|>, <|im_end|>)",
   "loss_masking": "Assistant-only (-100 for prompt positions)",
   "train_set": {

@@ -4,15 +4,15 @@
   "adapter_path": "ml/training/checkpoints/codeforge_lora_sft_v1.pt",
   "validation_loss": 9.4397,
   "total_benchmark_tasks": 8,
-  "passed_tasks": 8,
-  "pass_at_1": 1.0,
+  "passed_tasks": 6,
+  "pass_at_1": 0.75,
   "syntax_validity_rate": 1.0,
   "multi_file_completion_rate": 1.0,
   "debugging_repair_rate": 1.0,
   "language_breakdown": {
     "Python": {
       "total": 6,
-      "passed": 6
+      "passed": 4
     },
     "TypeScript": {
       "total": 1,
@@ -24,8 +24,8 @@
     }
   },
   "performance_metrics": {
-    "total_evaluation_time_ms": 8895.35,
-    "average_latency_ms": 1111.92,
+    "total_evaluation_time_ms": 16548.39,
+    "average_latency_ms": 2068.55,
     "total_prompt_tokens": 715,
     "total_completion_tokens": 5448,
     "peak_vram_mb": 0.0,
@@ -38,7 +38,7 @@
       "language": "Python",
       "syntax_valid": true,
       "passed": true,
-      "duration_ms": 185.35
+      "duration_ms": 257.61
     },
     {
       "task_id": "HumanEval/1",
@@ -46,7 +46,7 @@
       "language": "Python",
       "syntax_valid": true,
       "passed": true,
-      "duration_ms": 353.14
+      "duration_ms": 654.67
     },
     {
       "task_id": "Private/001",
@@ -54,7 +54,7 @@
       "language": "Python",
       "syntax_valid": true,
       "passed": true,
-      "duration_ms": 383.27
+      "duration_ms": 1144.28
     },
     {
       "task_id": "inst-ts-0074",
@@ -85,7 +85,7 @@
       "type": "curated_instruction_corpus",
       "language": "Python",
       "syntax_valid": true,
-      "passed": true,
+      "passed": false,
       "latency_ms": 18.5
     },
     {
@@ -93,7 +93,7 @@
       "type": "curated_instruction_corpus",
       "language": "Python",
       "syntax_valid": true,
-      "passed": true,
+      "passed": false,
       "latency_ms": 18.5
     }
   ]

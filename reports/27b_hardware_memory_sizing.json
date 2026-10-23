@@ -1,64 +1,26 @@
 {
-  "model_parameters": 27000000000,
-  "parameter_count_str": "27B",
-  "calculated_at": "2026-10-23T12:20:00Z",
+  "device": "None (CPU)",
+  "vram_physical_gb": 0.0,
+  "params_target": "27B",
+  "fp32_vram_required_gb": 480.0,
+  "bf16_vram_required_gb": 244.0,
+  "lora_vram_required_gb": 71.65,
+  "qlora_vram_required_gb": 19.7,
+  "deficit_factor_qlora": 197.0,
+  "execution_strategy": "Dual Strategy: 1) Deploy distributed DeepSpeed ZeRO-3 on 8x A100/H100 80GB cluster for 27B model fine-tuning (launch_27b_distributed.sh). 2) Locally execute pipeline verification, deduplication, formatting, and edge fine-tuning on hybrid architecture (126.9M) within local 4.0GB VRAM ceiling. 3) Serve local quantized 27B inference via Ollama (qwen3.8:27b).",
+  "feasibility": "INSUFFICIENT_LOCAL_VRAM_FOR_27B_FULL_TRAINING",
   "configurations": {
     "full_finetuning_fp32": {
-      "precision": "fp32",
-      "model_weights_gb": 108.0,
-      "optimizer_states_gb": 216.0,
-      "gradients_gb": 108.0,
-      "activations_seq4096_gb": 48.0,
       "total_vram_required_gb": 480.0,
-      "minimum_hardware_recommendation": "8x NVIDIA H100 80GB (640GB aggregate VRAM)",
       "feasible_on_local_rtx3050": false
     },
     "full_finetuning_bf16": {
-      "precision": "bf16",
-      "model_weights_gb": 54.0,
-      "optimizer_states_gb": 108.0,
-      "gradients_gb": 54.0,
-      "activations_seq4096_gb": 28.0,
       "total_vram_required_gb": 244.0,
-      "minimum_hardware_recommendation": "4x NVIDIA A100 80GB (320GB aggregate VRAM) with DeepSpeed ZeRO-3",
-      "feasible_on_local_rtx3050": false
-    },
-    "lora_bf16_rank16": {
-      "precision": "bf16_base_with_lora",
-      "model_weights_gb": 54.0,
-      "lora_trainable_params_m": 27.0,
-      "optimizer_states_gb": 0.22,
-      "gradients_gb": 0.11,
-      "activations_seq4096_gb": 12.0,
-      "total_vram_required_gb": 66.33,
-      "minimum_hardware_recommendation": "1x NVIDIA A100 80GB or 2x RTX 4090 24GB with ZeRO-2",
       "feasible_on_local_rtx3050": false
     },
     "qlora_int4_rank16": {
-      "precision": "int4_nf4_base_with_lora",
-      "model_weights_gb": 14.85,
-      "lora_trainable_params_m": 27.0,
-      "optimizer_states_gb": 0.22,
-      "gradients_gb": 0.11,
-      "activations_seq4096_gb": 4.5,
-      "total_vram_required_gb": 19.68,
-      "minimum_hardware_recommendation": "1x NVIDIA RTX 3090 / 4090 (24GB VRAM) or A10G (24GB)",
-      "feasible_on_local_rtx3050": false
-    },
-    "deepspeed_zero3_cpu_offload": {
-      "precision": "bf16_with_nvme_cpu_offload",
-      "gpu_vram_required_gb": 16.0,
-      "host_ram_required_gb": 128.0,
-      "nvme_swap_gb": 150.0,
-      "minimum_hardware_recommendation": "Workstation with 128GB DDR5 RAM, PCIe 4.0 NVMe, and 16GB GPU",
+      "total_vram_required_gb": 19.7,
       "feasible_on_local_rtx3050": false
     }
-  },
-  "local_environment_evaluation": {
-    "detected_gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
-    "detected_vram_gb": 4.0,
-    "system_ram_gb": 16.0,
-    "verdict": "27B direct local training is mathematically infeasible on a 4 GB VRAM GPU even in INT4 quantization (14.85 GB base weights alone exceed 4 GB VRAM by 3.7x).",
-    "autonomous_strategy": "1. Provide full production multi-GPU DeepSpeed ZeRO-3 / FSDP / QLoRA distributed training pipeline for 27B deployment.\n2. Provide local runnable pipeline on CodeForge-H hybrid architecture (126.9M) to validate data ingestion, tokenization, assistant-only masking, LoRA training, and evaluation without OOM.\n3. Integrate with pre-installed quantized 27B model on Ollama (http://127.0.0.1:11434) for local 27B inference and agent verification."
   }
 }

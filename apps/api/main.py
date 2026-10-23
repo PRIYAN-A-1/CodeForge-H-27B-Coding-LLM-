@@ -275,6 +275,59 @@ def stop_training(job_id: str):
     training_jobs[job_id]["status"] = "stopped"
     return {"job_id": job_id, "status": "stopped"}
 
+# 11b. 27B Autonomous Pipeline Endpoints
+class AutonomousPipelineRequest(BaseModel):
+    target_model: str = "27b"
+    steps: int = Field(default=5, ge=1, le=100)
+    budget_gb: float = Field(default=20.0, ge=1.0)
+    resume: Optional[str] = None
+
+autonomous_pipeline_state: Dict[str, Any] = {
+    "status": "idle",
+    "last_run": None,
+    "report": None
+}
+
+@app.post("/api/training/27b-autonomous-pipeline")
+def run_27b_autonomous_pipeline(req: AutonomousPipelineRequest, background_tasks: BackgroundTasks):
+    job_id = f"job-27b-{uuid.uuid4().hex[:8]}"
+    autonomous_pipeline_state["status"] = "running"
+    autonomous_pipeline_state["job_id"] = job_id
+    autonomous_pipeline_state["started_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+    def run_pipeline_task(steps: int, budget: float, model: str, resume: Optional[str]):
+        try:
+            from scripts.run_autonomous_pipeline import AutonomousTrainingPipeline
+            runner = AutonomousTrainingPipeline(
+                target_model=model,
+                budget_gb=budget,
+                training_steps=steps,
+                resume_checkpoint=resume,
+                auto_mode=True
+            )
+            rep = runner.run_all()
+            autonomous_pipeline_state["status"] = "completed"
+            autonomous_pipeline_state["last_run"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+            autonomous_pipeline_state["report"] = rep
+        except Exception as e:
+            autonomous_pipeline_state["status"] = "failed"
+            autonomous_pipeline_state["error"] = str(e)
+
+    background_tasks.add_task(run_pipeline_task, req.steps, req.budget_gb, req.target_model, req.resume)
+    return {"status": "started", "job_id": job_id, "target_model": req.target_model}
+
+@app.get("/api/training/27b-autonomous-pipeline/status")
+def get_27b_autonomous_pipeline_status():
+    report_file = PROJECT_ROOT / "reports" / "autonomous_pipeline_execution_report.json"
+    if report_file.exists() and not autonomous_pipeline_state.get("report"):
+        try:
+            with open(report_file, "r", encoding="utf-8") as f:
+                autonomous_pipeline_state["report"] = json.load(f)
+                autonomous_pipeline_state["status"] = "completed"
+        except Exception:
+            pass
+    return autonomous_pipeline_state
+
 # 12. Evaluations Endpoint
 @app.get("/api/evaluations")
 def get_evaluations():

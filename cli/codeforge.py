@@ -166,6 +166,22 @@ def cmd_hardware(args):
         print("Hardware report not found. Run python scripts/discover_hardware.py first.")
 
 
+def cmd_auto_train(args):
+    """Run fully autonomous 27B training pipeline across all phases."""
+    from scripts.run_autonomous_pipeline import AutonomousTrainingPipeline
+    print(f"\n[CodeForge] Launching Autonomous 27B Training Pipeline (steps={args.steps}, budget={args.budget_gb}GB)...")
+    runner = AutonomousTrainingPipeline(
+        target_model=args.target_model,
+        budget_gb=args.budget_gb,
+        training_steps=args.steps,
+        resume_checkpoint=args.resume,
+        auto_mode=True
+    )
+    report = runner.run_all()
+    if args.json:
+        print(json.dumps(report, indent=2))
+
+
 def cmd_serve(args):
     """Start the CodeForge AI FastAPI API server & Web Dashboard."""
     import uvicorn
@@ -179,6 +195,15 @@ def main():
         description="CodeForge AI - Autonomous Multilingual Coding Model & Agent CLI"
     )
     subparsers = parser.add_subparsers(dest="command", required=True, help="Subcommand to execute")
+
+    # auto-train
+    p_auto = subparsers.add_parser("auto-train", help="Run fully autonomous 27B coding LLM training pipeline")
+    p_auto.add_argument("--target-model", type=str, default="27b", help="Target model size")
+    p_auto.add_argument("--steps", type=int, default=5, help="Training verification steps")
+    p_auto.add_argument("--budget-gb", type=float, default=20.0, help="Storage budget in GB")
+    p_auto.add_argument("--resume", type=str, default=None, help="Checkpoint to resume from")
+    p_auto.add_argument("--json", action="store_true", help="Output final report as JSON")
+    p_auto.set_defaults(func=cmd_auto_train)
 
     # plan
     p_plan = subparsers.add_parser("plan", help="Analyze requirements and build ProjectPlan")
