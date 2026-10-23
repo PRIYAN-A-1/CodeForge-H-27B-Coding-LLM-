@@ -1,7 +1,7 @@
 # Autonomous 27B Coding LLM & Coding Agent - Master Execution Report
 
-**Execution Timestamp:** 2026-10-23T08:20:17Z  
-**Total Pipeline Duration:** 150.06 seconds  
+**Execution Timestamp:** 2026-10-23T09:22:49Z  
+**Total Pipeline Duration:** 174.36 seconds  
 **Target Parameter Class:** 27 Billion (27B Coding LLM)  
 **Execution Mode:** Fully Autonomous Dual-Tier Pipeline  
 
@@ -29,7 +29,7 @@
 ---
 
 ## 3. Data Processing, Secret Scrubbing & Decontamination
-- **Clean Usable Samples:** 122
+- **Clean Usable Samples:** 156
 - **Exact Duplicates Removed:** 0 (SHA-256)
 - **Near Duplicates Removed:** 50 (MinHash LSH Jaccard >= 0.85)
 - **Contaminated Samples Scrubbed:** 0 (13-gram decontamination)
@@ -37,8 +37,8 @@
 ---
 
 ## 4. Multi-Objective Training Preparation
-- **Continued Pretraining (FIM):** 81764 tokens (54.12% FIM PSM split rate).
-- **Supervised Fine-Tuning (SFT):** 116876 tokens formatted in ChatML with assistant-only loss masking (`labels = -100` for user/system).
+- **Continued Pretraining (FIM):** 110051 tokens (54.12% FIM PSM split rate).
+- **Supervised Fine-Tuning (SFT):** 155420 tokens formatted in ChatML with assistant-only loss masking (`labels = -100` for user/system).
 - **Coding-Agent Multi-Step Trajectories:** 10 complex workflows (29 tool calls, execution outputs, and verified patches).
 
 ---
@@ -66,4 +66,4 @@
 - **Autonomous Project Generation:** Successfully synthesized `9` multi-file project files from natural language.
 - **Sandboxed Unit Testing:** All `4` tests executed and passed inside process jail.
 - **Autonomous Self-Repair:** Injected compiler/syntax error detected, bounded diff patch generated and applied, reran tests to 100% pass.
-- **Continuous Feedback Loop:** Staged `6` sanitized corrective pairs in feedback buffer.
+- **Continuous Feedback Loop:** Staged `5` sanitized corrective pairs in feedback buffer.

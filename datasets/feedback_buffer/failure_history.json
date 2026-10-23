@@ -258,5 +258,115 @@
     "user_prompt": "Project proj-c0526403 repair attempt",
     "clean_error": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed; Pytest failure in backend/test_main.py: C:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pytest_asyncio\\plugin.py:299: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the \"fixture\" caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to \"function\" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))",
     "failed_code_snippet": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed"
+  },
+  {
+    "fingerprint": "96f61a230604e4d5",
+    "task_id": "test_proj_regression",
+    "timestamp": "2026-10-23T08:59:30Z",
+    "category": "model_syntax_error",
+    "language": "Python",
+    "user_prompt": "Build a user authentication microservice",
+    "clean_error": "SyntaxError: invalid syntax in C:\\Users\\<REDACTED>\\main.py",
+    "failed_code_snippet": "def broken(:\n    pass\n"
+  },
+  {
+    "fingerprint": "0c39fc2c9a56f520",
+    "task_id": "test_suite_error_trace",
+    "timestamp": "2026-10-23T09:00:27Z",
+    "category": "runtime_exception",
+    "language": "Python",
+    "user_prompt": "def safe_divide(x: float, y: float) -> float:",
+    "clean_error": "ZeroDivisionError: division by zero in C:\\Users\\<REDACTED>\\test.py",
+    "failed_code_snippet": "def safe_divide(x, y): return x / y"
+  },
+  {
+    "fingerprint": "a744f489afe75b99",
+    "task_id": "proj-b7ae0820",
+    "timestamp": "2026-10-23T09:02:38Z",
+    "category": "model_syntax_error",
+    "language": "Python",
+    "user_prompt": "Project proj-b7ae0820 repair attempt",
+    "clean_error": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed; Pytest failure in backend/test_main.py: C:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pytest_asyncio\\plugin.py:299: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the \"fixture\" caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to \"function\" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))",
+    "failed_code_snippet": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed"
+  },
+  {
+    "fingerprint": "96f61a230604e4d5",
+    "task_id": "test_proj_regression",
+    "timestamp": "2026-10-23T09:06:27Z",
+    "category": "model_syntax_error",
+    "language": "Python",
+    "user_prompt": "Build a user authentication microservice",
+    "clean_error": "SyntaxError: invalid syntax in C:\\Users\\<REDACTED>\\main.py",
+    "failed_code_snippet": "def broken(:\n    pass\n"
+  },
+  {
+    "fingerprint": "0c39fc2c9a56f520",
+    "task_id": "test_suite_error_trace",
+    "timestamp": "2026-10-23T09:07:06Z",
+    "category": "runtime_exception",
+    "language": "Python",
+    "user_prompt": "def safe_divide(x: float, y: float) -> float:",
+    "clean_error": "ZeroDivisionError: division by zero in C:\\Users\\<REDACTED>\\test.py",
+    "failed_code_snippet": "def safe_divide(x, y): return x / y"
+  },
+  {
+    "fingerprint": "3be2c31f160ee737",
+    "task_id": "proj-9791e646",
+    "timestamp": "2026-10-23T09:08:18Z",
+    "category": "model_syntax_error",
+    "language": "Python",
+    "user_prompt": "Project proj-9791e646 repair attempt",
+    "clean_error": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed; Pytest failure in backend/test_main.py: =================================== ERRORS ====================================\n____ ERROR collecting sandbox/projects/proj-9791e646/backend/test_main.py _____\nC:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\python.py:493: in importtestmodule\n    mod = import_path(\nC:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\pathlib.py:587: in import_path\n    importlib.import_module(module_name)\nC:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n<frozen importlib._bootstrap>:1395: in _gcd_import\n    ???\n<frozen importlib._bootstrap>:1360: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\nC:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\assertion\\rewrite.py:185: in exec_module\n    exec(co, module.__dict__)\ntest_main.py:7: in <module>\n    from main import app\nE     File \"G:\\My Drive\\thoooo\\sandbox\\projects\\proj-9791e646\\backend\\main.py\", line 80\nE       def broken_endpoint(\nE                          ^\nE   SyntaxError: '(' was never closed\n=========================== short test summary info ===========================\nERROR test_main.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 5.48s",
+    "failed_code_snippet": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed"
+  },
+  {
+    "fingerprint": "9243874065f7bacc",
+    "task_id": "auto-eval-trace-27b",
+    "timestamp": "2026-10-23T09:21:26Z",
+    "category": "logic_test_failure",
+    "language": "Python",
+    "user_prompt": "def calculate_discount(price: float, rate: float) -> float:",
+    "clean_error": "AssertionError: Expected 90.0, got 80.0 in test_discount_rate",
+    "failed_code_snippet": "def calculate_discount(price, rate): return price - rate # Logic error"
+  },
+  {
+    "fingerprint": "c3ea1f25a66e5b92",
+    "task_id": "proj-4539886c",
+    "timestamp": "2026-10-23T09:22:49Z",
+    "category": "model_syntax_error",
+    "language": "Python",
+    "user_prompt": "Project proj-4539886c repair attempt",
+    "clean_error": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed; Pytest failure in backend/test_main.py: =================================== ERRORS ====================================\n____ ERROR collecting sandbox/projects/proj-4539886c/backend/test_main.py _____\nC:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\python.py:493: in importtestmodule\n    mod = import_path(\nC:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\pathlib.py:587: in import_path\n    importlib.import_module(module_name)\nC:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n<frozen importlib._bootstrap>:1395: in _gcd_import\n    ???\n<frozen importlib._bootstrap>:1360: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\nC:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\assertion\\rewrite.py:185: in exec_module\n    exec(co, module.__dict__)\ntest_main.py:7: in <module>\n    from main import app\nE     File \"G:\\My Drive\\thoooo\\sandbox\\projects\\proj-4539886c\\backend\\main.py\", line 80\nE       def broken_endpoint(\nE                          ^\nE   SyntaxError: '(' was never closed\n=========================== short test summary info ===========================\nERROR test_main.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 3.65s",
+    "failed_code_snippet": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed"
+  },
+  {
+    "fingerprint": "96f61a230604e4d5",
+    "task_id": "test_proj_regression",
+    "timestamp": "2026-10-23T09:24:30Z",
+    "category": "model_syntax_error",
+    "language": "Python",
+    "user_prompt": "Build a user authentication microservice",
+    "clean_error": "SyntaxError: invalid syntax in C:\\Users\\<REDACTED>\\main.py",
+    "failed_code_snippet": "def broken(:\n    pass\n"
+  },
+  {
+    "fingerprint": "0c39fc2c9a56f520",
+    "task_id": "test_suite_error_trace",
+    "timestamp": "2026-10-23T09:25:02Z",
+    "category": "runtime_exception",
+    "language": "Python",
+    "user_prompt": "def safe_divide(x: float, y: float) -> float:",
+    "clean_error": "ZeroDivisionError: division by zero in C:\\Users\\<REDACTED>\\test.py",
+    "failed_code_snippet": "def safe_divide(x, y): return x / y"
+  },
+  {
+    "fingerprint": "8f9622fd1a45fd37",
+    "task_id": "proj-6e2e3b65",
+    "timestamp": "2026-10-23T09:25:51Z",
+    "category": "model_syntax_error",
+    "language": "Python",
+    "user_prompt": "Project proj-6e2e3b65 repair attempt",
+    "clean_error": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed; Pytest failure in backend/test_main.py: =================================== ERRORS ====================================\n____ ERROR collecting sandbox/projects/proj-6e2e3b65/backend/test_main.py _____\nC:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\python.py:493: in importtestmodule\n    mod = import_path(\nC:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\pathlib.py:587: in import_path\n    importlib.import_module(module_name)\nC:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n<frozen importlib._bootstrap>:1395: in _gcd_import\n    ???\n<frozen importlib._bootstrap>:1360: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\nC:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\assertion\\rewrite.py:185: in exec_module\n    exec(co, module.__dict__)\ntest_main.py:7: in <module>\n    from main import app\nE     File \"G:\\My Drive\\thoooo\\sandbox\\projects\\proj-6e2e3b65\\backend\\main.py\", line 80\nE       def broken_endpoint(\nE                          ^\nE   SyntaxError: '(' was never closed\n=========================== short test summary info ===========================\nERROR test_main.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 4.23s",
+    "failed_code_snippet": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed"
   }
 ]

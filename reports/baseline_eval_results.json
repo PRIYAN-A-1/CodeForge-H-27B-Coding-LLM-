@@ -2,7 +2,7 @@
   "model_id": "codeforge-h-base-untrained",
   "model_type": "Base Model (Pre-Fine-Tuning)",
   "validation_loss": 10.8147,
-  "total_benchmark_tasks": 10,
+  "total_benchmark_tasks": 12,
   "passed_tasks": 0,
   "pass_at_1": 0.0,
   "syntax_validity_rate": 0.0,
@@ -10,7 +10,7 @@
   "debugging_repair_rate": 0.0,
   "language_breakdown": {
     "Python": {
-      "total": 7,
+      "total": 9,
       "passed": 0
     },
     "TypeScript": {
@@ -23,10 +23,10 @@
     }
   },
   "performance_metrics": {
-    "total_evaluation_time_ms": 0.16,
+    "total_evaluation_time_ms": 0.27,
     "average_latency_ms": 13.4,
-    "total_prompt_tokens": 916,
-    "total_completion_tokens": 105,
+    "total_prompt_tokens": 1267,
+    "total_completion_tokens": 135,
     "peak_vram_mb": 0.0,
     "system_ram_mb": 450.0
   },
@@ -56,7 +56,7 @@
       "latency_ms": 12.5
     },
     {
-      "task_id": "inst-sql-0075",
+      "task_id": "inst-sql-0079",
       "type": "curated_instruction_corpus",
       "language": "SQL",
       "syntax_valid": false,
@@ -64,23 +64,7 @@
       "latency_ms": 14.2
     },
     {
-      "task_id": "inst-ts-0074",
-      "type": "curated_instruction_corpus",
-      "language": "TypeScript",
-      "syntax_valid": false,
-      "passed": false,
-      "latency_ms": 14.2
-    },
-    {
-      "task_id": "inst-sql-0047",
-      "type": "curated_instruction_corpus",
-      "language": "SQL",
-      "syntax_valid": false,
-      "passed": false,
-      "latency_ms": 14.2
-    },
-    {
-      "task_id": "agent-proj-0001",
+      "task_id": "agent-proj-0003",
       "type": "agent_verified_multi_file",
       "language": "Python",
       "syntax_valid": false,
@@ -88,15 +72,31 @@
       "latency_ms": 14.2
     },
     {
-      "task_id": "inst-py-0069",
-      "type": "curated_instruction_corpus",
+      "task_id": "agent-proj-0009",
+      "type": "agent_verified_multi_file",
       "language": "Python",
       "syntax_valid": false,
       "passed": false,
       "latency_ms": 14.2
     },
     {
-      "task_id": "algo-qwen-0007",
+      "task_id": "repair-0031",
+      "type": "curated_repair_corpus",
+      "language": "Python",
+      "syntax_valid": false,
+      "passed": false,
+      "latency_ms": 14.2
+    },
+    {
+      "task_id": "inst-sql-0043",
+      "type": "curated_instruction_corpus",
+      "language": "SQL",
+      "syntax_valid": false,
+      "passed": false,
+      "latency_ms": 14.2
+    },
+    {
+      "task_id": "algo-qwen-0019",
       "type": "qwen25_coder_algorithms",
       "language": "Python",
       "syntax_valid": false,
@@ -104,9 +104,25 @@
       "latency_ms": 14.2
     },
     {
-      "task_id": "inst-test-0080",
-      "type": "curated_instruction_corpus",
+      "task_id": "algo-qwen-0016",
+      "type": "qwen25_coder_algorithms",
       "language": "Python",
+      "syntax_valid": false,
+      "passed": false,
+      "latency_ms": 14.2
+    },
+    {
+      "task_id": "agent-proj-0004",
+      "type": "agent_verified_multi_file",
+      "language": "Python",
+      "syntax_valid": false,
+      "passed": false,
+      "latency_ms": 14.2
+    },
+    {
+      "task_id": "algo-qwen-0006",
+      "type": "qwen25_coder_algorithms",
+      "language": "TypeScript",
       "syntax_valid": false,
       "passed": false,
       "latency_ms": 14.2

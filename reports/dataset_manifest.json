@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-10-23T08:16:04Z",
+  "timestamp": "2026-10-23T09:19:06Z",
   "total_datasets": 9,
-  "total_samples": 172,
-  "total_size_bytes": 165324,
-  "total_size_mb": 0.16,
+  "total_samples": 206,
+  "total_size_bytes": 212205,
+  "total_size_mb": 0.2,
   "storage_directory": "datasets/raw",
   "datasets": [
     {
@@ -61,9 +61,9 @@
       "license": "Apache-2.0",
       "status": "Acquired",
       "http_error": null,
-      "examples_acquired": 10,
-      "sha256": "058d88f4c5b8c5f3702a68f6dfe6c05b092c27ecf891f6a55beaaa76f4480ce4",
-      "size_bytes": 11453,
+      "examples_acquired": 25,
+      "sha256": "0e1160eb3ba07e810883adc913bb4c770f669ac482a5d9062799cf8e395a23c2",
+      "size_bytes": 32348,
       "local_file": "datasets/raw/qwen25_coder_algorithms.jsonl"
     },
     {
@@ -73,9 +73,9 @@
       "license": "Apache-2.0",
       "status": "Acquired",
       "http_error": null,
-      "examples_acquired": 4,
-      "sha256": "f5e37d9049d85eaa4031cbeec74e09b58ddec1bdf47de184c1ebfb6e42b3a468",
-      "size_bytes": 5031,
+      "examples_acquired": 12,
+      "sha256": "15ee22605ba377519ddc1641104a30294a5214ffa74a4696e59476350f202501",
+      "size_bytes": 18066,
       "local_file": "datasets/raw/starcoder2_fim_realcode.jsonl"
     },
     {
@@ -85,9 +85,9 @@
       "license": "MIT",
       "status": "Acquired",
       "http_error": null,
-      "examples_acquired": 3,
-      "sha256": "5a24e34f1292524cd93f723a8002286dbee37581212627c1b95b407dee2d557e",
-      "size_bytes": 2766,
+      "examples_acquired": 8,
+      "sha256": "142da183f9b1eb0c899d9a8589b0000f76f46f4f263da65eb63a9e59ef12042c",
+      "size_bytes": 7898,
       "local_file": "datasets/raw/swe_bench_repo_repairs.jsonl"
     },
     {
@@ -97,9 +97,9 @@
       "license": "Apache-2.0",
       "status": "Acquired",
       "http_error": null,
-      "examples_acquired": 2,
-      "sha256": "db8e378cbb94cc0be243dee8cbd5e5a8c6489c4b4fbef701cb066ed450d65562",
-      "size_bytes": 2701,
+      "examples_acquired": 4,
+      "sha256": "8a71de8731dba535a4617f8bf7c49f67afb8b003bdcaaff64153ce22ef485395",
+      "size_bytes": 6016,
       "local_file": "datasets/raw/tooluse_agent_trajectories.jsonl"
     },
     {
@@ -109,9 +109,9 @@
       "license": "Apache-2.0",
       "status": "Acquired",
       "http_error": null,
-      "examples_acquired": 3,
-      "sha256": "037840aab7e148c6ff2166ecd858bf4b25d2f1a4591164ff4457d5f948a2844a",
-      "size_bytes": 3261,
+      "examples_acquired": 7,
+      "sha256": "ba6275ec7d36489ff019131d7e9e394c7ce7e8a992d02a27ed3ad9d66adc8efb",
+      "size_bytes": 7765,
       "local_file": "datasets/raw/fullstack_system_blueprints.jsonl"
     }
   ]

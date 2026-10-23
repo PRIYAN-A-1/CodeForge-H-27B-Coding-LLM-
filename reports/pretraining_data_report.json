@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-10-23T08:21:09Z",
+  "timestamp": "2026-10-23T09:25:00Z",
   "output_file": "datasets/processed/pretraining_fim.jsonl",
-  "total_records": 103,
-  "fim_transformed_records": 58,
-  "fim_rate_pct": 56.31,
-  "total_tokens": 81692,
-  "average_tokens_per_record": 793.13,
+  "total_records": 132,
+  "fim_transformed_records": 71,
+  "fim_rate_pct": 53.79,
+  "total_tokens": 110195,
+  "average_tokens_per_record": 834.81,
   "sentinel_tokens": {
     "prefix": "<fim_prefix>",
     "suffix": "<fim_suffix>",

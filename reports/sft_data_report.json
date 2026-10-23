@@ -1,23 +1,23 @@
 {
-  "timestamp": "2026-10-23T08:21:10Z",
+  "timestamp": "2026-10-23T09:25:01Z",
   "chat_template": "ChatML (<|im_start|>, <|im_end|>)",
   "loss_masking": "Assistant-only (-100 for prompt positions)",
   "train_set": {
     "path": "datasets/processed/sft_chatml_train.jsonl",
     "stats": {
-      "samples": 103,
-      "prompt_tokens": 36139,
-      "completion_tokens": 80737,
-      "total_tokens": 116876
+      "samples": 132,
+      "prompt_tokens": 47372,
+      "completion_tokens": 108048,
+      "total_tokens": 155420
     }
   },
   "validation_set": {
     "path": "datasets/processed/sft_chatml_val.jsonl",
     "stats": {
-      "samples": 12,
-      "prompt_tokens": 4434,
-      "completion_tokens": 8855,
-      "total_tokens": 13289
+      "samples": 15,
+      "prompt_tokens": 5226,
+      "completion_tokens": 13318,
+      "total_tokens": 18544
     }
   }
 }

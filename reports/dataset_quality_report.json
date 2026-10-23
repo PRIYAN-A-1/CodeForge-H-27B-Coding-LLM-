@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-23T08:21:07Z",
-  "raw_examples_scanned": 172,
-  "valid_examples_retained": 122,
-  "retention_rate_pct": 70.93,
+  "timestamp": "2026-10-23T09:25:00Z",
+  "raw_examples_scanned": 206,
+  "valid_examples_retained": 156,
+  "retention_rate_pct": 75.73,
   "dropped_breakdown": {
     "empty_or_malformed": 0,
     "exact_duplicate": 0,
@@ -10,16 +10,17 @@
     "quality_filter_failed": 0
   },
   "splits": {
-    "train": 103,
-    "validation": 12,
-    "evaluation": 7
+    "train": 132,
+    "validation": 15,
+    "evaluation": 9
   },
   "language_distribution": {
-    "Python": 74,
-    "TypeScript": 22,
+    "Python": 95,
+    "TypeScript": 26,
     "SQL": 20,
-    "Go": 1,
-    "JSON": 5
+    "Go": 3,
+    "Rust": 1,
+    "JSON": 11
   },
   "decontamination": {
     "method": "13-gram exact match against HumanEval and MBPP benchmark fixtures",

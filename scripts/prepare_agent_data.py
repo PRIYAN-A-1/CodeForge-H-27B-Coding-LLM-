@@ -508,8 +508,9 @@ def prepare_agent_trajectories():
     train_file = TRAJECTORIES_DIR / "agent_trajectories_train.jsonl"
     val_file = TRAJECTORIES_DIR / "agent_trajectories_val.jsonl"
 
-    train_scenarios = AGENT_SCENARIOS[:3]
-    val_scenarios = AGENT_SCENARIOS[3:]
+    split_idx = max(1, int(len(AGENT_SCENARIOS) * 0.8))
+    train_scenarios = AGENT_SCENARIOS[:split_idx]
+    val_scenarios = AGENT_SCENARIOS[split_idx:]
 
     with open(train_file, "w", encoding="utf-8") as f:
         for s in train_scenarios:

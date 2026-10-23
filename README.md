@@ -2,7 +2,7 @@
 
 > **AI-Powered Multilingual Coding Model & Autonomous Software Development Agent**
 
-[![Tests](https://img.shields.io/badge/pytest-27%20passed%20(100%25)-emerald)](file:///g:/My%20Drive/thoooo/tests)
+[![Tests](https://img.shields.io/badge/pytest-48%20passed%20(100%25)-emerald)](file:///g:/My%20Drive/thoooo/tests)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](file:///g:/My%20Drive/thoooo/LICENSE)
 [![Python](https://img.shields.io/badge/python-3.13-blue)](file:///g:/My%20Drive/thoooo/ENVIRONMENT.md)
 [![Hardware](https://img.shields.io/badge/GPU-RTX%203050%20(6GB)-purple)](file:///g:/My%20Drive/thoooo/reports/hardware_report.json)

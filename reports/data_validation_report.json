@@ -1,16 +1,17 @@
 {
-  "timestamp": "2026-10-23T08:21:03Z",
+  "timestamp": "2026-10-23T09:24:58Z",
   "total_files_scanned": 8,
-  "total_records_processed": 172,
-  "records_valid": 172,
+  "total_records_processed": 206,
+  "records_valid": 206,
   "records_rejected_empty": 0,
   "records_with_secrets_redacted": 0,
   "language_distribution": {
-    "Python": 124,
-    "TypeScript": 22,
+    "Python": 145,
+    "TypeScript": 26,
     "SQL": 20,
-    "Go": 1,
-    "JSON": 5
+    "Go": 3,
+    "Rust": 1,
+    "JSON": 11
   },
   "file_summaries": [
     {
@@ -44,50 +45,52 @@
     },
     {
       "filename": "starcoder2_fim_realcode.jsonl",
-      "valid_samples": 4,
+      "valid_samples": 12,
       "empty_or_corrupt": 0,
       "secrets_scrubbed": 0,
       "languages": {
-        "Python": 2,
-        "TypeScript": 1,
-        "Go": 1
+        "Python": 5,
+        "TypeScript": 4,
+        "Go": 2,
+        "Rust": 1
       }
     },
     {
       "filename": "swe_bench_repo_repairs.jsonl",
-      "valid_samples": 3,
+      "valid_samples": 8,
       "empty_or_corrupt": 0,
       "secrets_scrubbed": 0,
       "languages": {
-        "Python": 3
+        "Python": 8
       }
     },
     {
       "filename": "tooluse_agent_trajectories.jsonl",
-      "valid_samples": 2,
+      "valid_samples": 4,
       "empty_or_corrupt": 0,
       "secrets_scrubbed": 0,
       "languages": {
-        "JSON": 2
+        "JSON": 4
       }
     },
     {
       "filename": "fullstack_system_blueprints.jsonl",
-      "valid_samples": 3,
+      "valid_samples": 7,
       "empty_or_corrupt": 0,
       "secrets_scrubbed": 0,
       "languages": {
-        "JSON": 3
+        "JSON": 7
       }
     },
     {
       "filename": "qwen25_coder_algorithms.jsonl",
-      "valid_samples": 10,
+      "valid_samples": 25,
       "empty_or_corrupt": 0,
       "secrets_scrubbed": 0,
       "languages": {
-        "Python": 9,
-        "TypeScript": 1
+        "Python": 22,
+        "TypeScript": 2,
+        "Go": 1
       }
     }
   ]
