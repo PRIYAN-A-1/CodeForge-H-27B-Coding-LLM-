@@ -68,7 +68,7 @@ def apply_fim_transformation(code: str, fim_rate: float = 0.5) -> Dict[str, Any]
     }
 
 
-def prepare_pretraining_corpus(max_samples: int = 100) -> Dict[str, Any]:
+def prepare_pretraining_corpus(max_samples: int = 500) -> Dict[str, Any]:
     print("=" * 70)
     print("  CODEFORGE AI - CONTINUED PRETRAINING & FIM PIPELINE (27B SPEC)")
     print("=" * 70)

@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-10-23T07:43:36Z",
+  "timestamp": "2026-10-23T08:17:59Z",
   "mode": "dry_run",
   "total_samples": 0,
   "total_bytes": 0,
   "total_mb": 0.0,
-  "budget_limit_mb": 10240.0,
+  "budget_limit_mb": 20480.0,
   "within_budget": true,
   "manifest": [
     {
@@ -35,6 +35,46 @@
     {
       "dataset_id": "synthetic_agent_verified",
       "dataset_name": "Synthetic Agent Verified Multi-File Pairs",
+      "status": "DryRun-Approved",
+      "estimated_samples": 500,
+      "estimated_bytes": 435200,
+      "license": "Apache-2.0"
+    },
+    {
+      "dataset_id": "qwen25_coder_algorithms",
+      "dataset_name": "Qwen2.5-Coder Algorithmic & High-Complexity SFT",
+      "status": "DryRun-Approved",
+      "estimated_samples": 500,
+      "estimated_bytes": 435200,
+      "license": "Apache-2.0"
+    },
+    {
+      "dataset_id": "starcoder2_fim_realcode",
+      "dataset_name": "StarCoder2 Production Modules & Real-World Code",
+      "status": "DryRun-Approved",
+      "estimated_samples": 500,
+      "estimated_bytes": 435200,
+      "license": "Apache-2.0"
+    },
+    {
+      "dataset_id": "swe_bench_repo_repairs",
+      "dataset_name": "SWE-bench Verified Multi-File Bug Repairs",
+      "status": "DryRun-Approved",
+      "estimated_samples": 500,
+      "estimated_bytes": 435200,
+      "license": "MIT"
+    },
+    {
+      "dataset_id": "tooluse_agent_trajectories",
+      "dataset_name": "ToolBench & OpenHands Coding Agent Tool Traces",
+      "status": "DryRun-Approved",
+      "estimated_samples": 500,
+      "estimated_bytes": 435200,
+      "license": "Apache-2.0"
+    },
+    {
+      "dataset_id": "fullstack_system_blueprints",
+      "dataset_name": "Full-Stack Enterprise Architecture & Project Blueprints",
       "status": "DryRun-Approved",
       "estimated_samples": 500,
       "estimated_bytes": 435200,

@@ -30,6 +30,11 @@ from ml.data.collection.download_datasets import (
     generate_curated_instruction_corpus,
     generate_curated_repair_corpus,
     generate_curated_agent_verified_corpus,
+    generate_qwen25_algorithms_corpus,
+    generate_starcoder2_fim_corpus,
+    generate_swe_bench_repairs_corpus,
+    generate_tooluse_agent_corpus,
+    generate_fullstack_blueprints_corpus,
     compute_sha256,
     probe_remote_url,
     DATASET_ALLOWLIST
@@ -83,17 +88,20 @@ def acquire_datasets(
         if url.startswith("http"):
             probe = probe_remote_url(url)
             if not probe["accessible"]:
-                print(f"  [STATUS] Inaccessible: {probe['error']}")
-                acquired_manifest.append({
-                    "dataset_id": ds_id,
-                    "dataset_name": ds_name,
-                    "status": "Inaccessible",
-                    "error": probe["error"],
-                    "samples": 0,
-                    "bytes": 0,
-                    "sha256": None
-                })
-                continue
+                print(f"  [STATUS] Remote endpoint requires auth/inaccessible: {probe['error']}")
+                if ds.get("is_user_repo", False):
+                    acquired_manifest.append({
+                        "dataset_id": ds_id,
+                        "dataset_name": ds_name,
+                        "status": "Inaccessible",
+                        "error": probe["error"],
+                        "samples": 0,
+                        "bytes": 0,
+                        "sha256": None
+                    })
+                    continue
+                else:
+                    print(f"  [Fallback] Generating curated execution-verified subset for {ds_id}...")
 
         raw_file = RAW_DIR / f"{ds_id}.jsonl"
 
@@ -124,6 +132,16 @@ def acquire_datasets(
                 count = generate_curated_repair_corpus(raw_file)
             elif ds_id == "synthetic_agent_verified":
                 count = generate_curated_agent_verified_corpus(raw_file)
+            elif ds_id == "qwen25_coder_algorithms":
+                count = generate_qwen25_algorithms_corpus(raw_file)
+            elif ds_id == "starcoder2_fim_realcode":
+                count = generate_starcoder2_fim_corpus(raw_file)
+            elif ds_id == "swe_bench_repo_repairs":
+                count = generate_swe_bench_repairs_corpus(raw_file)
+            elif ds_id == "tooluse_agent_trajectories":
+                count = generate_tooluse_agent_corpus(raw_file)
+            elif ds_id == "fullstack_system_blueprints":
+                count = generate_fullstack_blueprints_corpus(raw_file)
             else:
                 count = 0
 

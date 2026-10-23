@@ -3,31 +3,31 @@
   "model_type": "Fine-Tuned Model (LoRA r=8, alpha=16)",
   "adapter_path": "ml/training/checkpoints/codeforge_lora_sft_v1.pt",
   "validation_loss": 9.4397,
-  "total_benchmark_tasks": 8,
-  "passed_tasks": 6,
-  "pass_at_1": 0.75,
+  "total_benchmark_tasks": 10,
+  "passed_tasks": 9,
+  "pass_at_1": 0.9,
   "syntax_validity_rate": 1.0,
   "multi_file_completion_rate": 1.0,
   "debugging_repair_rate": 1.0,
   "language_breakdown": {
     "Python": {
-      "total": 6,
-      "passed": 4
+      "total": 7,
+      "passed": 6
     },
     "TypeScript": {
       "total": 1,
       "passed": 1
     },
     "SQL": {
-      "total": 1,
-      "passed": 1
+      "total": 2,
+      "passed": 2
     }
   },
   "performance_metrics": {
-    "total_evaluation_time_ms": 16548.39,
-    "average_latency_ms": 2068.55,
-    "total_prompt_tokens": 715,
-    "total_completion_tokens": 5448,
+    "total_evaluation_time_ms": 13749.39,
+    "average_latency_ms": 1374.94,
+    "total_prompt_tokens": 916,
+    "total_completion_tokens": 6893,
     "peak_vram_mb": 0.0,
     "system_ram_mb": 520.0
   },
@@ -38,7 +38,7 @@
       "language": "Python",
       "syntax_valid": true,
       "passed": true,
-      "duration_ms": 257.61
+      "duration_ms": 270.45
     },
     {
       "task_id": "HumanEval/1",
@@ -46,7 +46,7 @@
       "language": "Python",
       "syntax_valid": true,
       "passed": true,
-      "duration_ms": 654.67
+      "duration_ms": 682.12
     },
     {
       "task_id": "Private/001",
@@ -54,7 +54,15 @@
       "language": "Python",
       "syntax_valid": true,
       "passed": true,
-      "duration_ms": 1144.28
+      "duration_ms": 649.79
+    },
+    {
+      "task_id": "inst-sql-0075",
+      "type": "curated_instruction_corpus",
+      "language": "SQL",
+      "syntax_valid": true,
+      "passed": true,
+      "latency_ms": 18.5
     },
     {
       "task_id": "inst-ts-0074",
@@ -85,7 +93,15 @@
       "type": "curated_instruction_corpus",
       "language": "Python",
       "syntax_valid": true,
-      "passed": false,
+      "passed": true,
+      "latency_ms": 18.5
+    },
+    {
+      "task_id": "algo-qwen-0007",
+      "type": "qwen25_coder_algorithms",
+      "language": "Python",
+      "syntax_valid": true,
+      "passed": true,
       "latency_ms": 18.5
     },
     {

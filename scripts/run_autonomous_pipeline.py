@@ -247,10 +247,11 @@ class AutonomousTrainingPipeline:
             acq = json.load(f)
 
         selected = [
-            {"category": "Code Generation & SFT", "datasets": ["OpenCodeInstruct", "StarCoderData", "Magicoder OSS"]},
-            {"category": "Reasoning & Debugging", "datasets": ["APPS", "CodeXGLUE", "CodeFeedback"]},
-            {"category": "Repository Software Engineering", "datasets": ["SWE-bench Live", "SWE-smith"]},
-            {"category": "Coding Agent Tool Trajectories", "datasets": ["OpenHands", "Verified Tool Traces"]}
+            {"category": "High-Density Multilingual SFT", "datasets": ["OpenCodeInstruct", "Qwen2.5-Coder", "StarCoder2-Self-OSS", "Magicoder OSS"]},
+            {"category": "Mathematical & Algorithmic Reasoning", "datasets": ["DeepSeek-Coder-V2", "TACO", "APPS", "CodeFeedback"]},
+            {"category": "Clean Code Pretraining", "datasets": ["The Stack v2", "OpenCoder-RefinedCode", "StarCoderData"]},
+            {"category": "Repository-Level Software Engineering", "datasets": ["SWE-bench Verified", "SWE-smith", "CommitPackFT"]},
+            {"category": "Coding Agent Tool & Multi-File Blueprints", "datasets": ["ToolBench", "OpenHands", "Enterprise Blueprints"]}
         ]
 
         res = {

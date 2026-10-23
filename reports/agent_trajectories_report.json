@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-10-23T07:59:31Z",
-  "total_trajectories": 4,
-  "total_agent_steps": 11,
+  "timestamp": "2026-10-23T08:21:11Z",
+  "total_trajectories": 10,
+  "total_agent_steps": 29,
   "tool_types_validated": [
     "read_file",
     "run_command",
@@ -10,7 +10,7 @@
   "train_file": "datasets/agent_trajectories/agent_trajectories_train.jsonl",
   "val_file": "datasets/agent_trajectories/agent_trajectories_val.jsonl",
   "outcomes": {
-    "VERIFIED_SUCCESS": 4,
+    "VERIFIED_SUCCESS": 10,
     "FAILED": 0
   }
 }

@@ -218,5 +218,45 @@
     "user_prompt": "Project proj-9d713561 repair attempt",
     "clean_error": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed; Pytest failure in backend/test_main.py: C:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pytest_asyncio\\plugin.py:299: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the \"fixture\" caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to \"function\" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))",
     "failed_code_snippet": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed"
+  },
+  {
+    "fingerprint": "9243874065f7bacc",
+    "task_id": "auto-eval-trace-27b",
+    "timestamp": "2026-10-23T08:19:07Z",
+    "category": "logic_test_failure",
+    "language": "Python",
+    "user_prompt": "def calculate_discount(price: float, rate: float) -> float:",
+    "clean_error": "AssertionError: Expected 90.0, got 80.0 in test_discount_rate",
+    "failed_code_snippet": "def calculate_discount(price, rate): return price - rate # Logic error"
+  },
+  {
+    "fingerprint": "1af027748df4a3c7",
+    "task_id": "proj-6a570bac",
+    "timestamp": "2026-10-23T08:20:16Z",
+    "category": "model_syntax_error",
+    "language": "Python",
+    "user_prompt": "Project proj-6a570bac repair attempt",
+    "clean_error": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed; Pytest failure in backend/test_main.py: C:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pytest_asyncio\\plugin.py:299: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the \"fixture\" caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to \"function\" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))",
+    "failed_code_snippet": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed"
+  },
+  {
+    "fingerprint": "0c39fc2c9a56f520",
+    "task_id": "test_suite_error_trace",
+    "timestamp": "2026-10-23T08:21:11Z",
+    "category": "runtime_exception",
+    "language": "Python",
+    "user_prompt": "def safe_divide(x: float, y: float) -> float:",
+    "clean_error": "ZeroDivisionError: division by zero in C:\\Users\\<REDACTED>\\test.py",
+    "failed_code_snippet": "def safe_divide(x, y): return x / y"
+  },
+  {
+    "fingerprint": "cd7367a9a860ea97",
+    "task_id": "proj-c0526403",
+    "timestamp": "2026-10-23T08:22:50Z",
+    "category": "model_syntax_error",
+    "language": "Python",
+    "user_prompt": "Project proj-c0526403 repair attempt",
+    "clean_error": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed; Pytest failure in backend/test_main.py: C:\\Users\\<REDACTED>\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pytest_asyncio\\plugin.py:299: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the \"fixture\" caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to \"function\" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))",
+    "failed_code_snippet": "Python syntax error in backend/main.py: File \"main.py\", line 80\n    def broken_endpoint(\n                       ^\nSyntaxError: '(' was never closed"
   }
 ]

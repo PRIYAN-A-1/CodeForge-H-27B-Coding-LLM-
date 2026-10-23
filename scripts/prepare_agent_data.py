@@ -208,6 +208,294 @@ AGENT_SCENARIOS = [
         ],
         "outcome": "VERIFIED_SUCCESS",
         "final_solution": "Synthesized Next.js client component with dark-mode styling and TypeScript safety."
+    },
+    {
+        "task_id": "agent-traj-005",
+        "title": "Migrate Synchronous HTTP Calls to Asynchronous HTTPX",
+        "repo": "microservices-gateway",
+        "user_request": "The backend blocks the asyncio event loop by calling requests.get(). Replace with httpx.AsyncClient and verify with pytest.",
+        "repo_context": "backend/\n  client.py\n  test_client.py",
+        "steps": [
+            {
+                "thought": "Inspect backend/client.py to find synchronous requests calls.",
+                "tool_call": {
+                    "name": "read_file",
+                    "arguments": {"path": "backend/client.py"}
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "import requests\n\ndef fetch_data(url: str):\n    return requests.get(url, timeout=5).json()"
+                }
+            },
+            {
+                "thought": "Replace with async def fetch_data using httpx.AsyncClient.",
+                "tool_call": {
+                    "name": "replace_file_content",
+                    "arguments": {
+                        "path": "backend/client.py",
+                        "target": "import requests\n\ndef fetch_data(url: str):\n    return requests.get(url, timeout=5).json()",
+                        "replacement": "import httpx\n\nasync def fetch_data(url: str):\n    async with httpx.AsyncClient(timeout=5.0) as client:\n        res = await client.get(url)\n        res.raise_for_status()\n        return res.json()"
+                    }
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "Replaced synchronous code with async httpx."
+                }
+            },
+            {
+                "thought": "Execute pytest to verify non-blocking async client behavior.",
+                "tool_call": {
+                    "name": "run_command",
+                    "arguments": {"command": "pytest backend/test_client.py -v"}
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "backend/test_client.py::test_fetch_data PASSED"
+                }
+            }
+        ],
+        "outcome": "VERIFIED_SUCCESS",
+        "final_solution": "Migrated requests.get to non-blocking httpx.AsyncClient with context manager."
+    },
+    {
+        "task_id": "agent-traj-006",
+        "title": "Remediate SQL Injection in Search Filter",
+        "repo": "billing-api",
+        "user_request": "Security scanner detected unparameterized SQL query in search_invoices(). Sanitize using SQLAlchemy text parameter bindings.",
+        "repo_context": "backend/\n  db.py\n  invoices.py",
+        "steps": [
+            {
+                "thought": "Locate string concatenation in search_invoices.",
+                "tool_call": {
+                    "name": "read_file",
+                    "arguments": {"path": "backend/invoices.py"}
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "query = f'SELECT * FROM invoices WHERE client_name LIKE \\'%{query_str}%\\''"
+                }
+            },
+            {
+                "thought": "Refactor to parameterized query using text() with bind params.",
+                "tool_call": {
+                    "name": "replace_file_content",
+                    "arguments": {
+                        "path": "backend/invoices.py",
+                        "target": "query = f'SELECT * FROM invoices WHERE client_name LIKE \\'%{query_str}%\\''",
+                        "replacement": "query = text('SELECT * FROM invoices WHERE client_name LIKE :pattern').bindparams(pattern=f'%{query_str}%')"
+                    }
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "Parameterized query successfully."
+                }
+            },
+            {
+                "thought": "Run security test suite to verify protection against SQL injection attacks.",
+                "tool_call": {
+                    "name": "run_command",
+                    "arguments": {"command": "pytest tests/security/test_sql_injection.py"}
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "2 passed in 0.15s"
+                }
+            }
+        ],
+        "outcome": "VERIFIED_SUCCESS",
+        "final_solution": "Eliminated SQL injection vulnerability with parameterized SQL binding."
+    },
+    {
+        "task_id": "agent-traj-007",
+        "title": "Resolve SQLite 'Database is Locked' Under Concurrency",
+        "repo": "task-runner",
+        "user_request": "Parallel worker processes encounter 'sqlite3.OperationalError: database is locked'. Configure WAL mode and busy timeout.",
+        "repo_context": "backend/\n  database.py",
+        "steps": [
+            {
+                "thought": "Inspect SQLite connection setup in backend/database.py.",
+                "tool_call": {
+                    "name": "read_file",
+                    "arguments": {"path": "backend/database.py"}
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "conn = sqlite3.connect('tasks.db')"
+                }
+            },
+            {
+                "thought": "Add WAL journal_mode PRAGMA and 30-second timeout.",
+                "tool_call": {
+                    "name": "replace_file_content",
+                    "arguments": {
+                        "path": "backend/database.py",
+                        "target": "conn = sqlite3.connect('tasks.db')",
+                        "replacement": "conn = sqlite3.connect('tasks.db', timeout=30.0)\nconn.execute('PRAGMA journal_mode=WAL;')\nconn.execute('PRAGMA busy_timeout=30000;')"
+                    }
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "Configured WAL and busy timeout."
+                }
+            },
+            {
+                "thought": "Run concurrency stress test with 10 threads.",
+                "tool_call": {
+                    "name": "run_command",
+                    "arguments": {"command": "pytest tests/test_concurrency.py -v"}
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "test_parallel_writes PASSED"
+                }
+            }
+        ],
+        "outcome": "VERIFIED_SUCCESS",
+        "final_solution": "Enabled SQLite WAL mode and busy timeout, eliminating locked database errors."
+    },
+    {
+        "task_id": "agent-traj-008",
+        "title": "Fix TypeScript Optional Chaining Runtime Crash",
+        "repo": "crm-frontend",
+        "user_request": "TypeError: Cannot read properties of undefined (reading 'company') when customer metadata is null. Fix with optional chaining and nullish coalescing.",
+        "repo_context": "src/\n  components/\n    CustomerCard.tsx",
+        "steps": [
+            {
+                "thought": "View CustomerCard.tsx to see the unsafe property access.",
+                "tool_call": {
+                    "name": "read_file",
+                    "arguments": {"path": "src/components/CustomerCard.tsx"}
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "const companyName = customer.metadata.company.name;"
+                }
+            },
+            {
+                "thought": "Use safe optional chaining customer?.metadata?.company?.name ?? 'N/A'.",
+                "tool_call": {
+                    "name": "replace_file_content",
+                    "arguments": {
+                        "path": "src/components/CustomerCard.tsx",
+                        "target": "const companyName = customer.metadata.company.name;",
+                        "replacement": "const companyName = customer?.metadata?.company?.name ?? 'Independent';"
+                    }
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "Replaced with safe navigation operators."
+                }
+            },
+            {
+                "thought": "Run Vitest test suite to confirm render behavior with null metadata.",
+                "tool_call": {
+                    "name": "run_command",
+                    "arguments": {"command": "pnpm test CustomerCard.test.tsx"}
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "1 test passed (CustomerCard renders fallback without crash)"
+                }
+            }
+        ],
+        "outcome": "VERIFIED_SUCCESS",
+        "final_solution": "Applied TypeScript safe navigation and fallback coalescing."
+    },
+    {
+        "task_id": "agent-traj-009",
+        "title": "Fix Docker Container Non-Root Permission Denied",
+        "repo": "docker-deployment",
+        "user_request": "Production container fails to start with 'Permission denied: /app/cache'. Ensure app user owns the work directory.",
+        "repo_context": "Dockerfile",
+        "steps": [
+            {
+                "thought": "Inspect Dockerfile user switching order.",
+                "tool_call": {
+                    "name": "read_file",
+                    "arguments": {"path": "Dockerfile"}
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "RUN useradd -m appuser\nUSER appuser\nRUN mkdir -p /app/cache"
+                }
+            },
+            {
+                "thought": "Create /app/cache and chown to appuser before dropping root privileges.",
+                "tool_call": {
+                    "name": "replace_file_content",
+                    "arguments": {
+                        "path": "Dockerfile",
+                        "target": "RUN useradd -m appuser\nUSER appuser\nRUN mkdir -p /app/cache",
+                        "replacement": "RUN useradd -m appuser && mkdir -p /app/cache && chown -R appuser:appuser /app\nUSER appuser"
+                    }
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "Fixed ownership before USER appuser."
+                }
+            },
+            {
+                "thought": "Verify container build with docker build command.",
+                "tool_call": {
+                    "name": "run_command",
+                    "arguments": {"command": "docker build -t test-app ."}
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "Successfully tagged test-app:latest"
+                }
+            }
+        ],
+        "outcome": "VERIFIED_SUCCESS",
+        "final_solution": "Ensured directories are created and chowned before dropping to non-root user."
+    },
+    {
+        "task_id": "agent-traj-010",
+        "title": "Implement Distributed Celery Lock Timeout to Prevent Deadlocks",
+        "repo": "notification-service",
+        "user_request": "When a worker crashes, the notification lock is never released, causing permanent deadlock. Add TTL expiration to lock acquisition.",
+        "repo_context": "backend/\n  tasks.py",
+        "steps": [
+            {
+                "thought": "Inspect tasks.py to see lock acquisition logic.",
+                "tool_call": {
+                    "name": "read_file",
+                    "arguments": {"path": "backend/tasks.py"}
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "lock = redis_client.lock('send_batch')"
+                }
+            },
+            {
+                "thought": "Add timeout=60 and blocking_timeout=5 to lock.",
+                "tool_call": {
+                    "name": "replace_file_content",
+                    "arguments": {
+                        "path": "backend/tasks.py",
+                        "target": "lock = redis_client.lock('send_batch')",
+                        "replacement": "lock = redis_client.lock('send_batch', timeout=60, blocking_timeout=5)"
+                    }
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "Added timeout and blocking_timeout to Redis lock."
+                }
+            },
+            {
+                "thought": "Run unit test verifying lock auto-expires after timeout.",
+                "tool_call": {
+                    "name": "run_command",
+                    "arguments": {"command": "pytest backend/test_tasks.py -k test_lock_timeout"}
+                },
+                "observation": {
+                    "exit_code": 0,
+                    "stdout": "test_lock_timeout PASSED"
+                }
+            }
+        ],
+        "outcome": "VERIFIED_SUCCESS",
+        "final_solution": "Added lease expiration timeout to prevent distributed worker deadlocks."
     }
 ]
 

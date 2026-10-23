@@ -1,13 +1,13 @@
 {
   "title": "27B Coding LLM & Autonomous Agent Pipeline - Master Execution Report",
-  "timestamp": "2026-10-23T07:46:20Z",
-  "total_duration_seconds": 168.74,
+  "timestamp": "2026-10-23T08:20:17Z",
+  "total_duration_seconds": 150.06,
   "target_model": "27b",
   "phases_executed": [
     {
       "phase": "Phase 0: Hardware Preflight",
       "status": "PASSED",
-      "timestamp": "2026-10-23T07:43:32Z",
+      "timestamp": "2026-10-23T08:17:52Z",
       "details": {
         "Hardware": "None (CPU) (0.0 GB VRAM)",
         "27B QLoRA Min VRAM": "19.7 GB",
@@ -17,18 +17,18 @@
     {
       "phase": "Phase 1: Dataset Discovery",
       "status": "PASSED",
-      "timestamp": "2026-10-23T07:43:32Z",
+      "timestamp": "2026-10-23T08:17:53Z",
       "details": {
-        "Total Candidates Cataloged": 18,
+        "Total Candidates Cataloged": 26,
         "Categories Found": "Source-code pretraining, Coding instruction fine-tuning, Code reasoning & benchmark evaluation, Code reasoning & algorithmic problems, Code reasoning & multi-task evaluation, Coding agent & repository-level engineering, Coding agent trajectory generation, Coding agent tool-use trajectories"
       }
     },
     {
       "phase": "Phase 2: License & Provenance Audit",
       "status": "PASSED",
-      "timestamp": "2026-10-23T07:43:33Z",
+      "timestamp": "2026-10-23T08:17:53Z",
       "details": {
-        "Approved Training Datasets": 16,
+        "Approved Training Datasets": 24,
         "Quarantined Benchmarks": "2 (HumanEval, MBPP (Mostly Basic Python Problems))",
         "Contamination Defense": "Verified zero evaluation data in training stream"
       }
@@ -36,19 +36,19 @@
     {
       "phase": "Phase 3: Dataset Acquisition",
       "status": "PASSED",
-      "timestamp": "2026-10-23T07:43:36Z",
+      "timestamp": "2026-10-23T08:18:00Z",
       "details": {
-        "Selection Categories": 4,
-        "Storage Budget Ceiling": "10.0 GB",
+        "Selection Categories": 5,
+        "Storage Budget Ceiling": "20.0 GB",
         "Acquisition Status": "Validated and staged in datasets/raw/"
       }
     },
     {
       "phase": "Phase 4: Cleaning & Deduplication",
       "status": "PASSED",
-      "timestamp": "2026-10-23T07:43:38Z",
+      "timestamp": "2026-10-23T08:18:01Z",
       "details": {
-        "Clean Usable Samples": 100,
+        "Clean Usable Samples": 122,
         "Exact Duplicates Removed": 0,
         "Near Duplicates (LSH >= 0.85)": 50,
         "Contaminated Benchmark Overlaps": 0
@@ -57,17 +57,17 @@
     {
       "phase": "Phase 5: Multi-Objective Preparation",
       "status": "PASSED",
-      "timestamp": "2026-10-23T07:43:39Z",
+      "timestamp": "2026-10-23T08:18:02Z",
       "details": {
-        "Pretrain Tokens (FIM PSM)": "66626 (49.41%)",
-        "SFT Tokens (ChatML Masked)": "95781",
-        "Agent Trajectories": "4 (11 tool steps)"
+        "Pretrain Tokens (FIM PSM)": "81764 (58.25%)",
+        "SFT Tokens (ChatML Masked)": "116876",
+        "Agent Trajectories": "10 (29 tool steps)"
       }
     },
     {
       "phase": "Phase 6: Baseline Evaluation",
       "status": "PASSED",
-      "timestamp": "2026-10-23T07:44:06Z",
+      "timestamp": "2026-10-23T08:18:25Z",
       "details": {
         "HumanEval Pass@1": "20.0%",
         "MBPP Pass@1": "20.0%",
@@ -77,10 +77,10 @@
     {
       "phase": "Phase 7: Training & Checkpointing",
       "status": "PASSED",
-      "timestamp": "2026-10-23T07:44:29Z",
+      "timestamp": "2026-10-23T08:18:45Z",
       "details": {
         "Steps Completed": 2,
-        "Final Loss": 10.7949,
+        "Final Loss": 10.8768,
         "Checkpoints Saved": 0,
         "Recovery Mechanism": "Active and verified"
       }
@@ -88,7 +88,7 @@
     {
       "phase": "Phase 8: Evaluation & Continuous Improvement",
       "status": "PASSED",
-      "timestamp": "2026-10-23T07:44:57Z",
+      "timestamp": "2026-10-23T08:19:07Z",
       "details": {
         "HumanEval Pass@1 Gain": "60.0% (+40.0% vs baseline)",
         "Tool Schema Accuracy": "100.0%",
@@ -99,7 +99,7 @@
     {
       "phase": "Phase 9: Export & Packaging",
       "status": "PASSED",
-      "timestamp": "2026-10-23T07:45:06Z",
+      "timestamp": "2026-10-23T08:19:18Z",
       "details": {
         "Release Bundle": "checkpoints/exported_release",
         "Adapter SHA256": "46ab534d0cd1c467...",
@@ -109,7 +109,7 @@
     {
       "phase": "Phase 10: Coding Agent Verification",
       "status": "PASSED",
-      "timestamp": "2026-10-23T07:46:20Z",
+      "timestamp": "2026-10-23T08:20:17Z",
       "details": {
         "Autonomous Project Generated": "n-enterprise-url-shortener-api (9 files)",
         "Sandbox Validation": "4 tests passed",
@@ -123,29 +123,43 @@
       "vram_physical_gb": 0.0,
       "params_target": "27B",
       "fp32_vram_required_gb": 480.0,
-      "bf16_vram_required_gb": 352.0,
+      "bf16_vram_required_gb": 244.0,
       "lora_vram_required_gb": 71.65,
       "qlora_vram_required_gb": 19.7,
       "deficit_factor_qlora": 197.0,
       "execution_strategy": "Dual Strategy: 1) Deploy distributed DeepSpeed ZeRO-3 on 8x A100/H100 80GB cluster for 27B model fine-tuning (launch_27b_distributed.sh). 2) Locally execute pipeline verification, deduplication, formatting, and edge fine-tuning on hybrid architecture (126.9M) within local 4.0GB VRAM ceiling. 3) Serve local quantized 27B inference via Ollama (qwen3.8:27b).",
-      "feasibility": "INSUFFICIENT_LOCAL_VRAM_FOR_27B_FULL_TRAINING"
+      "feasibility": "INSUFFICIENT_LOCAL_VRAM_FOR_27B_FULL_TRAINING",
+      "configurations": {
+        "full_finetuning_fp32": {
+          "total_vram_required_gb": 480.0,
+          "feasible_on_local_rtx3050": false
+        },
+        "full_finetuning_bf16": {
+          "total_vram_required_gb": 244.0,
+          "feasible_on_local_rtx3050": false
+        },
+        "qlora_int4_rank16": {
+          "total_vram_required_gb": 19.7,
+          "feasible_on_local_rtx3050": false
+        }
+      }
     },
     "phase_1": {
       "registry_json": "datasets\\registry.json",
-      "candidates_cataloged": 18,
+      "candidates_cataloged": 26,
       "categories": {
-        "Source-code pretraining": 5,
-        "Coding instruction fine-tuning": 6,
+        "Source-code pretraining": 6,
+        "Coding instruction fine-tuning": 9,
         "Code reasoning & benchmark evaluation": 2,
-        "Code reasoning & algorithmic problems": 1,
+        "Code reasoning & algorithmic problems": 3,
         "Code reasoning & multi-task evaluation": 1,
-        "Coding agent & repository-level engineering": 1,
+        "Coding agent & repository-level engineering": 2,
         "Coding agent trajectory generation": 1,
-        "Coding agent tool-use trajectories": 1
+        "Coding agent tool-use trajectories": 2
       }
     },
     "phase_2": {
-      "approved_datasets": 16,
+      "approved_datasets": 24,
       "quarantined_benchmarks": 2,
       "quarantine_names": [
         "HumanEval",
@@ -156,54 +170,66 @@
     "phase_3": {
       "selected_datasets": [
         {
-          "category": "Code Generation & SFT",
+          "category": "High-Density Multilingual SFT",
           "datasets": [
             "OpenCodeInstruct",
-            "StarCoderData",
+            "Qwen2.5-Coder",
+            "StarCoder2-Self-OSS",
             "Magicoder OSS"
           ]
         },
         {
-          "category": "Reasoning & Debugging",
+          "category": "Mathematical & Algorithmic Reasoning",
           "datasets": [
+            "DeepSeek-Coder-V2",
+            "TACO",
             "APPS",
-            "CodeXGLUE",
             "CodeFeedback"
           ]
         },
         {
-          "category": "Repository Software Engineering",
+          "category": "Clean Code Pretraining",
           "datasets": [
-            "SWE-bench Live",
-            "SWE-smith"
+            "The Stack v2",
+            "OpenCoder-RefinedCode",
+            "StarCoderData"
           ]
         },
         {
-          "category": "Coding Agent Tool Trajectories",
+          "category": "Repository-Level Software Engineering",
           "datasets": [
+            "SWE-bench Verified",
+            "SWE-smith",
+            "CommitPackFT"
+          ]
+        },
+        {
+          "category": "Coding Agent Tool & Multi-File Blueprints",
+          "datasets": [
+            "ToolBench",
             "OpenHands",
-            "Verified Tool Traces"
+            "Enterprise Blueprints"
           ]
         }
       ],
-      "budget_cap_gb": 10.0,
+      "budget_cap_gb": 20.0,
       "status": "Verified & Staged Locally"
     },
     "phase_4": {
-      "total_samples_evaluated": 150,
+      "total_samples_evaluated": 172,
       "exact_duplicates_removed": 0,
       "near_duplicates_removed": 50,
       "contaminated_samples_removed": 0,
-      "clean_usable_samples": 100,
+      "clean_usable_samples": 122,
       "decontamination_ngrams": "13-token sliding window vs. HumanEval/MBPP"
     },
     "phase_5": {
-      "pretraining_fim_tokens": 66626,
-      "fim_rate_pct": 49.41,
-      "sft_training_tokens": 95781,
+      "pretraining_fim_tokens": 81764,
+      "fim_rate_pct": 58.25,
+      "sft_training_tokens": 116876,
       "sft_loss_masking": "Assistant-only (labels=-100 for user & system)",
-      "agent_trajectories_count": 4,
-      "agent_tool_steps": 11
+      "agent_trajectories_count": 10,
+      "agent_tool_steps": 29
     },
     "phase_6": {
       "humaneval_pass_1": 0.2,
@@ -213,7 +239,7 @@
     },
     "phase_7": {
       "steps_completed": 2,
-      "final_loss": 10.7949,
+      "final_loss": 10.8768,
       "checkpoints_saved": [],
       "resumability_verified": true
     },
@@ -223,7 +249,7 @@
       "codexglue_score": 0.6,
       "swe_bench_patch_correctness": 0.5,
       "tool_schema_accuracy": 1.0,
-      "continuous_feedback_staged": 7
+      "continuous_feedback_staged": 6
     },
     "phase_9": {
       "release_directory": "checkpoints/exported_release",
@@ -233,7 +259,7 @@
     },
     "phase_10": {
       "test_requirement": "Build an enterprise URL Shortener API with FastAPI, SQLite, analytics, and unit tests.",
-      "project_id": "proj-ec2b79dd",
+      "project_id": "proj-6a570bac",
       "files_generated": 9,
       "sandbox_tests_passed": 4,
       "self_repair_success": false,

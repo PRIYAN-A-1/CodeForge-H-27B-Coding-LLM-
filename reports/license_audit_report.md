@@ -1,12 +1,12 @@
 # Dataset Legal and License Provenance Audit Report
-**Generated**: 2026-10-23T07:59:25Z  
+**Generated**: 2026-10-23T08:21:01Z  
 **Auditor**: CodeForge AI Automated Compliance & Provenance Engine  
 **Standard**: Section 4 & Section 12 Master Specification
 
 ---
 
 ## 1. Compliance Executive Summary
-All **18 candidate datasets** across pretraining, instruction tuning, reasoning, and software engineering agent trajectories were audited for:
+All **26 candidate datasets** across pretraining, instruction tuning, reasoning, and software engineering agent trajectories were audited for:
 1. License permissiveness (MIT, Apache-2.0, BSD-2/3-Clause, CC-BY-4.0, OpenRAIL-M).
 2. Commercial training legality and distribution rights.
 3. Mandatory attribution and provenance tracking.
@@ -24,6 +24,7 @@ All **18 candidate datasets** across pretraining, instruction tuning, reasoning,
 | **StarCoderData** | `BigCode OpenRAIL-M v1 / Permissive per-source` | Restricted | No | Subject to BigCode OpenRAIL-M v1 acceptable use policy (no cyberattack generation or unlawful discrimination). |
 | **CodeSearchNet** | `Multiple Permissive (MIT, Apache-2.0, BSD)` | Yes | No | Permissive open-source code |
 | **CodeParrot GitHub Code** | `Multiple Permissive (MIT, Apache-2.0, BSD-2/3-Clause)` | Yes | No | Permissive open-source code |
+| **OpenCoder-RefinedCode** | `Apache-2.0` | Yes | No | Permissive open-source code |
 
 ### Stage 2 & 3: Supervised Instruction Tuning (Approved)
 | Dataset | License | Commercial Usable | Attribution Required | Notes |
@@ -36,6 +37,11 @@ All **18 candidate datasets** across pretraining, instruction tuning, reasoning,
 | **Glaive Code Assistant v3** | `Apache-2.0` | Restricted | No | Permissive SFT instructions |
 | **APPS (Automated Programming Progress Standard)** | `MIT` | Yes | No | Permissive SFT instructions |
 | **CodeXGLUE** | `MIT` | Yes | No | Permissive SFT instructions |
+| **Qwen2.5-Coder-Instruct** | `Apache-2.0` | Restricted | No | Permissive SFT instructions |
+| **DeepSeek-Coder-V2-Instruct** | `DeepSeek License (Permissive Commercial)` | Yes | No | Permissive SFT instructions |
+| **StarCoder2-Self-OSS-Instruct** | `Apache-2.0` | Restricted | No | Permissive SFT instructions |
+| **TACO (Topic-Aware Code Contests)** | `MIT` | Yes | No | Permissive SFT instructions |
+| **CommitPackFT** | `Apache-2.0` | Yes | No | Permissive SFT instructions |
 
 ### Stage 4: Coding Agent Trajectories (Approved)
 | Dataset | License | Commercial Usable | Attribution Required | Notes |
@@ -43,6 +49,8 @@ All **18 candidate datasets** across pretraining, instruction tuning, reasoning,
 | **SWE-bench** | `MIT` | Yes | No | Verified tool interactions |
 | **SWE-smith** | `MIT` | Yes | No | Verified tool interactions |
 | **OpenHands Agent Trajectories** | `MIT` | Yes | No | Verified tool interactions |
+| **SWE-bench Verified** | `MIT` | Yes | No | Verified tool interactions |
+| **ToolBench Multi-Turn Agent Traces** | `Apache-2.0` | Restricted | No | Verified tool interactions |
 
 ---
 

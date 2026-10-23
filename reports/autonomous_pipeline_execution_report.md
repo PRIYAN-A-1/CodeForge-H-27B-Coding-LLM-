@@ -1,7 +1,7 @@
 # Autonomous 27B Coding LLM & Coding Agent - Master Execution Report
 
-**Execution Timestamp:** 2026-10-23T07:46:20Z  
-**Total Pipeline Duration:** 168.74 seconds  
+**Execution Timestamp:** 2026-10-23T08:20:17Z  
+**Total Pipeline Duration:** 150.06 seconds  
 **Target Parameter Class:** 27 Billion (27B Coding LLM)  
 **Execution Mode:** Fully Autonomous Dual-Tier Pipeline  
 
@@ -22,14 +22,14 @@
 ---
 
 ## 2. Public Dataset Discovery & Licensing Audit
-- **Total Candidates Cataloged:** 18 datasets across Pretraining, SFT, Reasoning, and Software Engineering.
-- **Approved Training Datasets:** 16 (OpenRAIL-M, Apache-2.0, MIT, CC-BY-4.0).
+- **Total Candidates Cataloged:** 26 datasets across Pretraining, SFT, Reasoning, and Software Engineering.
+- **Approved Training Datasets:** 24 (OpenRAIL-M, Apache-2.0, MIT, CC-BY-4.0).
 - **Quarantined Evaluation Benchmarks:** 2 (HumanEval, MBPP (Mostly Basic Python Problems)). Strictly isolated to prevent test contamination.
 
 ---
 
 ## 3. Data Processing, Secret Scrubbing & Decontamination
-- **Clean Usable Samples:** 100
+- **Clean Usable Samples:** 122
 - **Exact Duplicates Removed:** 0 (SHA-256)
 - **Near Duplicates Removed:** 50 (MinHash LSH Jaccard >= 0.85)
 - **Contaminated Samples Scrubbed:** 0 (13-gram decontamination)
@@ -37,9 +37,9 @@
 ---
 
 ## 4. Multi-Objective Training Preparation
-- **Continued Pretraining (FIM):** 66626 tokens (54.12% FIM PSM split rate).
-- **Supervised Fine-Tuning (SFT):** 95781 tokens formatted in ChatML with assistant-only loss masking (`labels = -100` for user/system).
-- **Coding-Agent Multi-Step Trajectories:** 4 complex workflows (11 tool calls, execution outputs, and verified patches).
+- **Continued Pretraining (FIM):** 81764 tokens (54.12% FIM PSM split rate).
+- **Supervised Fine-Tuning (SFT):** 116876 tokens formatted in ChatML with assistant-only loss masking (`labels = -100` for user/system).
+- **Coding-Agent Multi-Step Trajectories:** 10 complex workflows (29 tool calls, execution outputs, and verified patches).
 
 ---
 
@@ -66,4 +66,4 @@
 - **Autonomous Project Generation:** Successfully synthesized `9` multi-file project files from natural language.
 - **Sandboxed Unit Testing:** All `4` tests executed and passed inside process jail.
 - **Autonomous Self-Repair:** Injected compiler/syntax error detected, bounded diff patch generated and applied, reran tests to 100% pass.
-- **Continuous Feedback Loop:** Staged `7` sanitized corrective pairs in feedback buffer.
+- **Continuous Feedback Loop:** Staged `6` sanitized corrective pairs in feedback buffer.

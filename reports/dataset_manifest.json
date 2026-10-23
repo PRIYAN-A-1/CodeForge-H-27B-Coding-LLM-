@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-10-23T06:27:34Z",
-  "total_datasets": 4,
-  "total_samples": 150,
-  "total_size_bytes": 140112,
-  "total_size_mb": 0.13,
+  "timestamp": "2026-10-23T08:16:04Z",
+  "total_datasets": 9,
+  "total_samples": 172,
+  "total_size_bytes": 165324,
+  "total_size_mb": 0.16,
   "storage_directory": "datasets/raw",
   "datasets": [
     {
@@ -53,6 +53,66 @@
       "sha256": "3ed860115cd679f2c4e0cd794dfc361882162c510193842a65934b77117a9bae",
       "size_bytes": 18028,
       "local_file": "datasets/raw/synthetic_agent_verified.jsonl"
+    },
+    {
+      "dataset_id": "qwen25_coder_algorithms",
+      "dataset_name": "Qwen2.5-Coder Algorithmic & High-Complexity SFT",
+      "source_url": "https://huggingface.co/datasets/Qwen/Qwen2.5-Coder-Instruct",
+      "license": "Apache-2.0",
+      "status": "Acquired",
+      "http_error": null,
+      "examples_acquired": 10,
+      "sha256": "058d88f4c5b8c5f3702a68f6dfe6c05b092c27ecf891f6a55beaaa76f4480ce4",
+      "size_bytes": 11453,
+      "local_file": "datasets/raw/qwen25_coder_algorithms.jsonl"
+    },
+    {
+      "dataset_id": "starcoder2_fim_realcode",
+      "dataset_name": "StarCoder2 Production Modules & Real-World Code",
+      "source_url": "https://huggingface.co/datasets/bigcode/self-oss-instruct-sc2-exec-filter-50k",
+      "license": "Apache-2.0",
+      "status": "Acquired",
+      "http_error": null,
+      "examples_acquired": 4,
+      "sha256": "f5e37d9049d85eaa4031cbeec74e09b58ddec1bdf47de184c1ebfb6e42b3a468",
+      "size_bytes": 5031,
+      "local_file": "datasets/raw/starcoder2_fim_realcode.jsonl"
+    },
+    {
+      "dataset_id": "swe_bench_repo_repairs",
+      "dataset_name": "SWE-bench Verified Multi-File Bug Repairs",
+      "source_url": "https://github.com/swe-bench/SWE-bench",
+      "license": "MIT",
+      "status": "Acquired",
+      "http_error": null,
+      "examples_acquired": 3,
+      "sha256": "5a24e34f1292524cd93f723a8002286dbee37581212627c1b95b407dee2d557e",
+      "size_bytes": 2766,
+      "local_file": "datasets/raw/swe_bench_repo_repairs.jsonl"
+    },
+    {
+      "dataset_id": "tooluse_agent_trajectories",
+      "dataset_name": "ToolBench & OpenHands Coding Agent Tool Traces",
+      "source_url": "https://github.com/OpenBMB/ToolBench",
+      "license": "Apache-2.0",
+      "status": "Acquired",
+      "http_error": null,
+      "examples_acquired": 2,
+      "sha256": "db8e378cbb94cc0be243dee8cbd5e5a8c6489c4b4fbef701cb066ed450d65562",
+      "size_bytes": 2701,
+      "local_file": "datasets/raw/tooluse_agent_trajectories.jsonl"
+    },
+    {
+      "dataset_id": "fullstack_system_blueprints",
+      "dataset_name": "Full-Stack Enterprise Architecture & Project Blueprints",
+      "source_url": "local://codeforge-enterprise-blueprints",
+      "license": "Apache-2.0",
+      "status": "Acquired",
+      "http_error": null,
+      "examples_acquired": 3,
+      "sha256": "037840aab7e148c6ff2166ecd858bf4b25d2f1a4591164ff4457d5f948a2844a",
+      "size_bytes": 3261,
+      "local_file": "datasets/raw/fullstack_system_blueprints.jsonl"
     }
   ]
 }

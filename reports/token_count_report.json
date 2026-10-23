@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-10-23T07:59:28Z",
+  "timestamp": "2026-10-23T08:21:07Z",
   "tokenizer": "ByteLevelBPE",
   "vocabulary_size": 49152,
   "max_context_length": 512,
-  "total_tokens": 87489,
-  "mean_tokens_per_sample": 874.89,
+  "total_tokens": 108006,
+  "mean_tokens_per_sample": 885.3,
   "min_tokens": 257,
   "max_tokens": 1486,
-  "samples_exceeding_context": 71,
-  "samples_exceeding_pct": 71.0
+  "samples_exceeding_context": 93,
+  "samples_exceeding_pct": 76.23
 }

@@ -1,6 +1,6 @@
 {
-  "audit_timestamp": "2026-10-23T07:59:25Z",
-  "total_candidates_audited": 18,
+  "audit_timestamp": "2026-10-23T08:21:01Z",
+  "total_candidates_audited": 26,
   "approved_pretraining_sources": [
     {
       "dataset_name": "The Stack v2",
@@ -47,6 +47,16 @@
       "license": "Multiple Permissive (MIT, Apache-2.0, BSD-2/3-Clause)",
       "publisher": "Hugging Face / CodeParrot",
       "canonical_url": "https://huggingface.co/datasets/codeparrot/github-code",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "OpenCoder-RefinedCode",
+      "license": "Apache-2.0",
+      "publisher": "OpenCoder Consortium",
+      "canonical_url": "https://huggingface.co/datasets/OpenCoder-LLM/RefinedCode",
       "commercial_usable": true,
       "attribution_required": false,
       "training_status": "APPROVED",
@@ -133,6 +143,56 @@
       "attribution_required": false,
       "training_status": "APPROVED",
       "notes": ""
+    },
+    {
+      "dataset_name": "Qwen2.5-Coder-Instruct",
+      "license": "Apache-2.0",
+      "publisher": "Alibaba Cloud / Qwen Team",
+      "canonical_url": "https://huggingface.co/datasets/Qwen/Qwen2.5-Coder-Instruct",
+      "commercial_usable": false,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "DeepSeek-Coder-V2-Instruct",
+      "license": "DeepSeek License (Permissive Commercial)",
+      "publisher": "DeepSeek AI",
+      "canonical_url": "https://huggingface.co/datasets/deepseek-ai/DeepSeek-Coder-V2-Instruct",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "StarCoder2-Self-OSS-Instruct",
+      "license": "Apache-2.0",
+      "publisher": "BigCode Project / ServiceNow",
+      "canonical_url": "https://huggingface.co/datasets/bigcode/self-oss-instruct-sc2-exec-filter-50k",
+      "commercial_usable": false,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "TACO (Topic-Aware Code Contests)",
+      "license": "MIT",
+      "publisher": "BAAI / HKUST",
+      "canonical_url": "https://huggingface.co/datasets/BAAI/TACO",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "CommitPackFT",
+      "license": "Apache-2.0",
+      "publisher": "BigCode Project / Niklas Muennighoff et al.",
+      "canonical_url": "https://huggingface.co/datasets/bigcode/commitpackft",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
     }
   ],
   "approved_agent_sources": [
@@ -165,6 +225,26 @@
       "attribution_required": false,
       "training_status": "APPROVED",
       "notes": ""
+    },
+    {
+      "dataset_name": "SWE-bench Verified",
+      "license": "MIT",
+      "publisher": "Princeton NLP / OpenAI / Carlos E. Jimenez",
+      "canonical_url": "https://github.com/swe-bench/SWE-bench/tree/main/docs/verified",
+      "commercial_usable": true,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
+    },
+    {
+      "dataset_name": "ToolBench Multi-Turn Agent Traces",
+      "license": "Apache-2.0",
+      "publisher": "OpenBMB / Tsinghua University",
+      "canonical_url": "https://github.com/OpenBMB/ToolBench",
+      "commercial_usable": false,
+      "attribution_required": false,
+      "training_status": "APPROVED",
+      "notes": ""
     }
   ],
   "evaluation_quarantined_benchmarks": [
@@ -194,8 +274,8 @@
     "OpenCodeInstruct: Attribution to NVIDIA is legally mandatory under CC-BY-4.0."
   ],
   "summary_counts": {
-    "approved_for_training": 16,
+    "approved_for_training": 24,
     "quarantined_for_evaluation": 2,
-    "total": 18
+    "total": 26
   }
 }
