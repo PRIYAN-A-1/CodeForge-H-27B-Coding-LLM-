@@ -3,6 +3,8 @@
 **Base Architecture**: CodeForge-H XL 27B / Qwen3.8-27B Hybrid Decoder  
 **Adapter Checkpoint**: `codeforge_lora_sft_v1.pt`  
 **License**: Apache-2.0  
+**Author**: Priyan ([priyan1436ei@gmail.com](mailto:priyan1436ei@gmail.com))  
+**Repository**: [PRIYAN-A-1/CodeForge-H-27B-Coding-LLM-](https://github.com/PRIYAN-A-1/CodeForge-H-27B-Coding-LLM-)  
 **SHA-256 Checksum**: `46ab534d0cd1c467c2e526cb9f5508273224da9490af52870b04d0b5f3215c0e`  
 
 ---

@@ -356,7 +356,8 @@ codeforge-ai/
 
 ### Built with ❤️ for Autonomous Software Engineering & Open-Source AI
 
-**CodeForge AI & CodeForge-H** • Licensed under [Apache-2.0](file:///g:/My%20Drive/thoooo/LICENSE)
+**Author & Lead Engineer:** Priyan ([priyan1436ei@gmail.com](mailto:priyan1436ei@gmail.com)) • [@PRIYAN-A-1](https://github.com/PRIYAN-A-1)  
+**License:** [Apache License 2.0](file:///g:/My%20Drive/thoooo/LICENSE) © 2026 Priyan
 
 <br/>
 
