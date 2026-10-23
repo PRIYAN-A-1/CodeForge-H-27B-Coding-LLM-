@@ -319,7 +319,7 @@ def run_27b_autonomous_pipeline(req: AutonomousPipelineRequest, background_tasks
 @app.get("/api/training/27b-autonomous-pipeline/status")
 def get_27b_autonomous_pipeline_status():
     report_file = PROJECT_ROOT / "reports" / "autonomous_pipeline_execution_report.json"
-    if report_file.exists() and not autonomous_pipeline_state.get("report"):
+    if report_file.exists():
         try:
             with open(report_file, "r", encoding="utf-8") as f:
                 autonomous_pipeline_state["report"] = json.load(f)
